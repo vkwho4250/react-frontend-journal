@@ -19,10 +19,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vkwho9ar/DailyJournal.git"
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
