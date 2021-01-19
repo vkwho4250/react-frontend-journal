@@ -1,0 +1,39 @@
+.day-container {
+   border-bottom: 1rem dashed rgb(166, 177, 225);
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   justify-items: center;
+}
+
+.indicator {
+   width: 10rem;
+   height: 10rem;
+   border-radius: 50%;
+   border: 1rem solid rgb(166, 177, 225);
+   cursor: pointer;
+}
+
+.indicator.task {
+   background: linear-gradient(
+      45deg,
+      var(--night-dark-purple) 50%,
+      transparent 50%
+   );
+}
+
+.indicator.event {
+   background: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--night-pink-purple) 50%
+   );
+}
+
+.event.task {
+   background: linear-gradient(
+      45deg,
+      var(--night-dark-purple) 50%,
+      var(--night-pink-purple) 50%
+   );
+}

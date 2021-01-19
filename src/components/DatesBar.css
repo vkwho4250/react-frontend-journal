@@ -1,0 +1,12 @@
+#dates-bar {
+   position: relative;
+   z-index: 98;
+   /* left: 35%; */
+   width: 90rem;
+   height: 100%;
+   padding: 5rem;
+   background: white;
+   box-shadow: 5rem 0 20rem 5rem rgba(66, 72, 116, 0.4);
+   display: grid;
+   grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
+}

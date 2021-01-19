@@ -1,7 +1,7 @@
 #todolist {
-   position: absolute;
+   position: relative;
    top: 0;
-   left: 38%;
+   /* left: 40%; */
    width: 25%;
    height: 100%;
    box-shadow: 5rem 0 20rem 5rem rgba(66, 72, 116, 0.4);
@@ -49,11 +49,30 @@
 
 .create-item {
    position: absolute;
+   top: -100%;
+   left: 0;
    z-index: 9;
    width: 100%;
    box-shadow: 0 5rem 5rem -3rem rgba(97, 101, 138, 0.3);
-   padding: 5rem 20rem;
+   padding: 5rem 20rem 20rem;
    background: rgba(255, 255, 255, 1);
+   transition: all 1s ease-in-out;
+}
+
+.create-item.show {
+   top: 50rem;
+}
+
+svg.create-close-btn {
+   position: absolute;
+   z-index: 10;
+   width: 20rem;
+   height: 20rem;
+   left: 50%;
+   bottom: 0%;
+   transform: translate(-50%, 50%);
+   background: rgb(66, 72, 116);
+   border-radius: 50%;
 }
 
 .create-btn {
@@ -109,6 +128,7 @@
    align-items: center;
    -ms-overflow-style: none; /* IE and Edge */
    scrollbar-width: none; /* Firefox */
+   transition: all 1s ease-in-out;
 }
 
 .list-container::-webkit-scrollbar {
