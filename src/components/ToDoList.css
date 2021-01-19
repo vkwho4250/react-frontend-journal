@@ -1,0 +1,14 @@
+.list {
+   border-radius: 10rem;
+   box-shadow: 0 5rem 10rem -3rem rgba(66, 72, 116, 0.3);
+   width: 90%;
+   padding: 10rem;
+   background: white;
+   margin-bottom: 5%;
+}
+
+.items-display {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+}

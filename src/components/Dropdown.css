@@ -1,0 +1,8 @@
+.dropdown li {
+   width: 100%;
+   color: rgb(66, 72, 116);
+   border-bottom: 1rem dashed rgba(66, 72, 116, 0.2);
+   overflow: hidden;
+   padding: 5rem 0 5rem 5rem;
+   cursor: pointer;
+}

@@ -1,0 +1,78 @@
+:root {
+   --day-beige: rgb(255, 246, 237);
+
+   /* NIGHT THEME */
+   --night-light-purple: rgb(244, 238, 255);
+   --night-pink-purple: #dcd6f7;
+   --night-blue-purple: rgb(166, 177, 225);
+   --night-dark-purple: rgb(66, 72, 116);
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 6.25%;
+}
+body {
+   background: var(--night-dark-purple);
+   font: 14rem Quicksand, sans-serif;
+   font-weight: 400;
+}
+
+h1 {
+   font: inherit;
+   font-size: 40rem;
+   font-weight: 300;
+}
+
+h2 {
+   font-weight: 300;
+   font-size: 30rem;
+}
+
+h3 {
+   font-weight: 300;
+   font-size: 25rem;
+   color: white;
+}
+
+h4 {
+   text-transform: uppercase;
+   letter-spacing: 7rem;
+   font-weight: 500;
+   color: var(--night-dark-purple);
+}
+
+input {
+   border: none;
+   border-bottom: 1rem solid var(--night-dark-purple);
+   outline: none;
+   padding: 5rem;
+   font: inherit;
+   color: var(--night-dark-purple);
+   width: 100%;
+   background: none;
+}
+
+li {
+   list-style: none;
+}
+
+button {
+   border: none;
+   outline: none;
+   background: none;
+   font: inherit;
+   cursor: pointer;
+}
+
+svg.btn-icon {
+   color: white;
+   width: 15rem;
+   height: 15rem;
+   cursor: pointer;
+}
