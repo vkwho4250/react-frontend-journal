@@ -14,16 +14,32 @@ function DatesBar({ today, allItems }) {
    }
 
    const [todoDates, setTodoDates] = useState([]);
+   const [eventDates, setEventDates] = useState([]);
 
    useEffect(() => {
-      let todoArray = allItems.map((item) => item.deadline);
-      setTodoDates([...new Set(todoArray)]);
+      allItems.forEach((item) => {
+         if (item.type === "todo") {
+            setTodoDates((prevValues) => [...prevValues, item.date]);
+         } else {
+            setEventDates((prevValues) => [...prevValues, item.date]);
+         }
+      });
+
+      setTodoDates((prevValues) => [...new Set(prevValues)]);
+      setEventDates((prevValues) => [...new Set(prevValues)]);
    }, [allItems]);
 
    return (
       <div id="dates-bar">
          {dateArray.map((date, index) => {
-            return <Day key={index} date={date} todoDates={todoDates} />;
+            return (
+               <Day
+                  key={index}
+                  date={date}
+                  todoDates={todoDates}
+                  eventDates={eventDates}
+               />
+            );
          })}
       </div>
    );

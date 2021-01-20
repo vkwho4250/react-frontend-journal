@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Day.css";
 
-function Day({ date, todoDates }) {
+function Day({ date, todoDates, eventDates }) {
    const dayLetter = ["S", "M", "T", "W", "T", "F", "S"];
 
    const stringDate = date.toISOString().substring(0, 10);
 
    const [hasTodo, setHasTodo] = useState(false);
+   const [hasEvent, setHasEvent] = useState(false);
 
    useEffect(() => {
-      checkForTodos();
-   }, [hasTodo]);
-
-   function checkForTodos() {
-      if (todoDates.includes(stringDate)) {
-         setHasTodo(true);
-      }
-   }
+      todoDates.includes(stringDate) ? setHasTodo(true) : setHasTodo(false);
+      eventDates.includes(stringDate) ? setHasEvent(true) : setHasEvent(false);
+   }, [todoDates]);
 
    return (
       <div className="day-container">
@@ -28,7 +24,13 @@ function Day({ date, todoDates }) {
          </div>
 
          <div>
-            <div className={"indicator" + (hasTodo ? " task" : "")}></div>
+            <div
+               className={
+                  "indicator" +
+                  (hasTodo ? " todo" : "") +
+                  (hasEvent ? " event" : "")
+               }
+            ></div>
          </div>
       </div>
    );

@@ -14,7 +14,7 @@
    cursor: pointer;
 }
 
-.indicator.task {
+.indicator.todo {
    background: linear-gradient(
       45deg,
       var(--night-dark-purple) 50%,
@@ -26,14 +26,14 @@
    background: linear-gradient(
       45deg,
       transparent 50%,
-      var(--night-pink-purple) 50%
+      var(--night-blue-purple) 50%
    );
 }
 
-.event.task {
+.event.todo {
    background: linear-gradient(
       45deg,
       var(--night-dark-purple) 50%,
-      var(--night-pink-purple) 50%
+      var(--night-blue-purple) 50%
    );
 }

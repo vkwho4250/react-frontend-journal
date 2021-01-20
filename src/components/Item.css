@@ -23,13 +23,12 @@
    /* position: relative; */
    display: flex;
    align-items: center;
-   justify-content: space-between;
 }
 
 .list-item p {
    display: inline-block;
    padding-left: 3rem;
-   width: 80%;
+   width: 75%;
 }
 
 .item-done {
@@ -40,10 +39,23 @@
 svg.item-icon {
    color: rgb(66, 72, 116);
    display: inline-block;
-   cursor: pointer;
    transition: transform 1s ease-in-out;
 }
 
 svg.item-icon:hover {
    color: rgb(166, 177, 225);
 }
+
+svg.type-icon {
+   display: none;
+   color: rgb(66, 72, 116, 0.5);
+   cursor: auto;
+}
+
+svg.selected {
+   display: inline-block;
+}
+/* 
+svg.invisible {
+   opacity: 0;
+} */

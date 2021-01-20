@@ -50,7 +50,7 @@
 .summary-container {
    position: relative;
    z-index: 99;
-   width: 35%;
+   width: 30%;
    height: 100%;
    background: white;
    /* background: linear-gradient(to right, white 80%, transparent 90%); */
@@ -64,7 +64,7 @@
 .circle-container {
    position: relative;
    width: 100%;
-   height: 32vw;
+   height: 25vw;
    padding: 10%;
    display: flex;
    justify-content: center;
@@ -72,8 +72,8 @@
 
 .circle-img {
    position: absolute;
-   width: 27vw;
-   height: 27vw;
+   width: 22vw;
+   min-height: 22vw;
    border-radius: 50%;
    background: rgba(66, 72, 116, 1);
    display: flex;

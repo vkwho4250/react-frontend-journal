@@ -3,7 +3,7 @@
 
    /* NIGHT THEME */
    --night-light-purple: rgb(244, 238, 255);
-   --night-pink-purple: #dcd6f7;
+   --night-pink-purple: rgb(220, 214, 247);
    --night-blue-purple: rgb(166, 177, 225);
    --night-dark-purple: rgb(66, 72, 116);
 }
@@ -25,13 +25,13 @@ body {
 
 h1 {
    font: inherit;
-   font-size: 40rem;
+   font-size: 3vw;
    font-weight: 300;
 }
 
 h2 {
    font-weight: 300;
-   font-size: 30rem;
+   font-size: 2.5vw;
 }
 
 h3 {
@@ -68,6 +68,17 @@ button {
    background: none;
    font: inherit;
    cursor: pointer;
+}
+
+label {
+   font-weight: 500;
+   color: var(--night-dark-purple);
+   display: inline-block;
+   cursor: pointer;
+}
+
+input[type="radio"] {
+   display: none;
 }
 
 svg.btn-icon {

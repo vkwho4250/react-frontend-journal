@@ -2,10 +2,32 @@ import React from "react";
 import "./Dashboard.css";
 import { ReactComponent as NightSky } from "./images/night-sky.svg";
 
-import ToDos from "./ToDos";
+import Collections from "./Collections";
 import DatesBar from "./DatesBar";
+import TodaySummary from "./TodaySummary";
 
-function Dashboard({ today, allItems, setAllItems }) {
+function Dashboard({
+   // Variables
+   today,
+   habits,
+   setHabits,
+   allItems,
+   setAllItems,
+   newItem,
+   setNewItem,
+   itemType,
+   setItemType,
+   itemsOverflow,
+   createDisplay,
+   action,
+   // Functions
+   itemsInList,
+   addItem,
+   removeItem,
+   editItem,
+   optionSelected,
+   changeCreateDisplay,
+}) {
    const options = {
       year: "numeric",
       month: "long",
@@ -32,13 +54,37 @@ function Dashboard({ today, allItems, setAllItems }) {
                <h2>{currentWeekday}</h2>
                <h1>{todayFormatted}</h1>
             </div>
+            <TodaySummary
+               allItems={allItems}
+               setAllItems={setAllItems}
+               habits={habits}
+               setHabits={setHabits}
+            />
          </div>
          <div className="ribbon">
             <div className="ribbon-tip"></div>
          </div>
          <DatesBar today={today} allItems={allItems} />
 
-         <ToDos today={today} allItems={allItems} setAllItems={setAllItems} />
+         <Collections
+            today={today}
+            // States
+            allItems={allItems}
+            newItem={newItem}
+            setNewItem={setNewItem}
+            itemType={itemType}
+            setItemType={setItemType}
+            itemsOverflow={itemsOverflow}
+            createDisplay={createDisplay}
+            action={action}
+            // Functions
+            itemsInList={itemsInList}
+            addItem={addItem}
+            removeItem={removeItem}
+            editItem={editItem}
+            optionSelected={optionSelected}
+            changeCreateDisplay={changeCreateDisplay}
+         />
 
          <div className="entries-container"></div>
       </div>

@@ -1,12 +1,12 @@
 import React from "react";
-import "./ToDoList.css";
+import "./List.css";
 import Item from "./Item";
 
-function ToDoList({ category, items, removeItem, editItem }) {
+function List({ listTitle, items, removeItem, editItem }) {
    return (
       <div className="list">
          <div>
-            <h4>{category}</h4>
+            <h4>{listTitle}</h4>
          </div>
          <div className="items-display">
             <ul>
@@ -16,6 +16,7 @@ function ToDoList({ category, items, removeItem, editItem }) {
                         key={index}
                         content={item.content}
                         itemID={item.id}
+                        itemType={item.type}
                         removeItem={removeItem}
                         editItem={editItem}
                      />
@@ -27,4 +28,4 @@ function ToDoList({ category, items, removeItem, editItem }) {
    );
 }
 
-export default ToDoList;
+export default List;

@@ -1,0 +1,24 @@
+#summary-container {
+   position: relative;
+   border: 1rem solid red;
+   width: 90%;
+   height: 30%;
+}
+
+#habits-container {
+   width: 100%;
+   height: 30%;
+   background: red;
+}
+
+.habit-indicators {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+   grid-gap: 10rem;
+   padding: 5rem 10rem;
+}
+
+.habit {
+   border-radius: 5rem;
+   border: 2rem solid blue;
+}
