@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./DatesBar.css";
 import Day from "./Day";
 
-function DatesBar({ today, allItems }) {
+function DatesBar({ today, allItems, filterItems }) {
    const [todayMonth, todayDate, todayYear] = today
       .toLocaleDateString("en-US")
       .split("/");
@@ -17,16 +17,12 @@ function DatesBar({ today, allItems }) {
    const [eventDates, setEventDates] = useState([]);
 
    useEffect(() => {
-      allItems.forEach((item) => {
-         if (item.type === "todo") {
-            setTodoDates((prevValues) => [...prevValues, item.date]);
-         } else {
-            setEventDates((prevValues) => [...prevValues, item.date]);
-         }
-      });
-
-      setTodoDates((prevValues) => [...new Set(prevValues)]);
-      setEventDates((prevValues) => [...new Set(prevValues)]);
+      setTodoDates(
+         filterItems(allItems, "type", "todo").map((item) => item.date)
+      );
+      setEventDates(
+         filterItems(allItems, "type", "event").map((item) => item.date)
+      );
    }, [allItems]);
 
    return (

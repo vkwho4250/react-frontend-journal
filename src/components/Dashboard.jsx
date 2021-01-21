@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import { ReactComponent as NightSky } from "./images/night-sky.svg";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import Collections from "./Collections";
 import DatesBar from "./DatesBar";
@@ -9,6 +10,7 @@ import TodaySummary from "./TodaySummary";
 function Dashboard({
    // Variables
    today,
+   todayString,
    habits,
    setHabits,
    allItems,
@@ -21,7 +23,8 @@ function Dashboard({
    createDisplay,
    action,
    // Functions
-   itemsInList,
+   filterItems,
+   updateItem,
    addItem,
    removeItem,
    editItem,
@@ -49,22 +52,34 @@ function Dashboard({
                <div className="circle-img">
                   <NightSky className="night-sky" />
                </div>
+               <div className="date-display">
+                  <h2>{currentWeekday}</h2>
+                  <h1>{todayFormatted}</h1>
+               </div>
             </div>
-            <div className="date-display">
-               <h2>{currentWeekday}</h2>
-               <h1>{todayFormatted}</h1>
-            </div>
+
             <TodaySummary
+               //Variables
+               todayString={todayString}
                allItems={allItems}
                setAllItems={setAllItems}
                habits={habits}
                setHabits={setHabits}
+               //Functions
+               filterItems={filterItems}
+               removeItem={removeItem}
+               editItem={editItem}
             />
          </div>
+
          <div className="ribbon">
             <div className="ribbon-tip"></div>
          </div>
-         <DatesBar today={today} allItems={allItems} />
+         <DatesBar
+            today={today}
+            allItems={allItems}
+            filterItems={filterItems}
+         />
 
          <Collections
             today={today}
@@ -78,7 +93,8 @@ function Dashboard({
             createDisplay={createDisplay}
             action={action}
             // Functions
-            itemsInList={itemsInList}
+            filterItems={filterItems}
+            updateItem={updateItem}
             addItem={addItem}
             removeItem={removeItem}
             editItem={editItem}

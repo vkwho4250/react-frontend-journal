@@ -21,7 +21,7 @@ function Collections({
    createDisplay,
    action,
    //Functions
-   itemsInList,
+   filterItems,
    addItem,
    removeItem,
    editItem,
@@ -180,14 +180,13 @@ function Collections({
          setItemType(value);
       }
 
-      setNewItem((prevContent) => {
+      setNewItem((prevValue) => {
          return {
-            ...prevContent,
+            ...prevValue,
             [name]: value,
          };
       });
 
-      // event.preventDefault();
       event.stopPropagation();
    }
 
@@ -213,7 +212,7 @@ function Collections({
       <div id="collections">
          <div className="header">
             <div className={moveUp ? "move-up header-text" : "header-text"}>
-               <h2>Collections</h2>
+               <h3>Collections</h3>
                <h3>{headerDisplay}</h3>
             </div>
             <div
@@ -279,6 +278,7 @@ function Collections({
                   name="content"
                   value={newItem.content}
                   placeholder="Item"
+                  minLength="1"
                ></input>
                <input
                   className="input-category"
@@ -288,6 +288,7 @@ function Collections({
                   name="category"
                   value={newItem.category}
                   placeholder="Category"
+                  minLength="1"
                ></input>
                <Collapse in={suggestionDisplay}>
                   <div className="suggestions">
@@ -322,7 +323,7 @@ function Collections({
 
          <div className="list-container">
             {categories.map((listTitle, index) => {
-               let listItems = itemsInList(listTitle);
+               let listItems = filterItems(allItems, "category", listTitle);
                return (
                   <List
                      key={index}

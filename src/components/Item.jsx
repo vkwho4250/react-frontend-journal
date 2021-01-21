@@ -11,8 +11,6 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 function Item({ content, itemID, itemType, listTitle, removeItem, editItem }) {
    const [isDone, setDoneStatus] = useState(false);
 
-   console.log(itemType);
-
    function changeDoneStatus() {
       setDoneStatus(!isDone);
    }
@@ -46,13 +44,15 @@ function Item({ content, itemID, itemType, listTitle, removeItem, editItem }) {
                   (itemType === "todo" ? " selected" : "")
                }
             />
-            <p className={isDone ? "item-done" : ""}>{content}</p>
+            <p onClick={changeDoneStatus} className={isDone ? "item-done" : ""}>
+               {content}
+            </p>
 
             <div className="item-icon-container">
-               <CheckIcon
+               {/* <CheckIcon
                   onClick={changeDoneStatus}
                   className="btn-icon item-icon check"
-               />
+               /> */}
                <EditIcon
                   onClick={updateItem}
                   className="btn-icon item-icon edit"

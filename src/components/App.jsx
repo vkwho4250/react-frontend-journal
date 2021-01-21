@@ -7,26 +7,28 @@ function App() {
 
    const [habits, setHabits] = useState([
       {
-         color: "#00ff4c",
+         id: 0,
          habit: "Drink 8 cups of water a day",
+         abbr: "W",
          tracker: [
             {
                date: "2021-01-18",
-               completed: true,
+               completed: "true",
             },
             {
                date: "2021-01-19",
-               completed: false,
+               completed: "false",
             },
          ],
       },
       {
-         color: "#ff0000",
+         id: 1,
          habit: "Take vitamins",
+         abbr: "V",
          tracker: [
             {
                date: "2021-01-18",
-               completed: true,
+               completed: "true",
             },
          ],
       },
@@ -67,7 +69,7 @@ function App() {
          type: "event",
          category: "Birthdays",
          content: "This is Jam's Bday",
-         date: "2021-12-24",
+         date: "2021-01-15",
       },
       {
          id: 5,
@@ -77,6 +79,8 @@ function App() {
          date: "2021-01-26",
       },
    ]);
+
+   // > ========  MANAGING COLLECTIONS -- ITEMS AND EVENTS =================
 
    const [itemsOverflow, setItemsOverflow] = useState(false);
    const [createDisplay, setCreateDisplay] = useState(false);
@@ -91,11 +95,11 @@ function App() {
       date: todayString,
    });
 
-   function itemsInList(listTitle) {
-      console.log("itemsInList");
+   function filterItems(array, byProperty, propertyName) {
+      console.log("filterItems");
 
-      return allItems.filter((item) => {
-         return item.category === listTitle;
+      return array.filter((item) => {
+         return item[byProperty] === propertyName;
       });
    }
 
@@ -114,7 +118,6 @@ function App() {
    }
 
    function addItem(event) {
-      console.log(allItems);
       if (newItem.content.trim() === "") {
          document.querySelector(".input-content").classList.add("empty-input");
       } else if (newItem.category.trim() === "") {
@@ -215,7 +218,7 @@ function App() {
             createDisplay={createDisplay}
             action={action}
             // Functions
-            itemsInList={itemsInList}
+            filterItems={filterItems}
             addItem={addItem}
             removeItem={removeItem}
             editItem={editItem}
