@@ -33,20 +33,27 @@ function TodaySummary({
 
    const [createHabit, setHabitDisplay] = useState(false);
    const [habitInFocus, setHabitInFocus] = useState("");
+   const [displayWarning, setDisplayWarning] = useState(false);
 
    const [newHabit, setNewHabit] = useState({
       id: habits.length,
       habit: "",
       abbr: "",
-      tracker: [
-         {
-            date: todayString,
-            completed: false,
-         },
-      ],
+      dates: [todayString],
+      completed: [false],
    });
 
+   function changeDisplayWarning(event) {
+      setDisplayWarning(!displayWarning);
+      // if (action === "Edit") {
+      //    setDisplayWarning(!displayWarning);
+      // }
+
+      event.preventDefault();
+   }
+
    function displayHabit(event) {
+      console.log(event.target);
       if (event.type === "mouseenter") {
          setHabitInFocus(event.currentTarget.getAttribute("habit"));
       } else {
@@ -59,57 +66,54 @@ function TodaySummary({
    }
 
    function editHabit(event) {
-      const habitID = event.target.getAttribute("value");
+      console.log(event.target);
 
-      const updatedTracker = habits[habitID].tracker;
+      try {
+         const habitID = event.target.getAttribute("value");
 
-      if (action === "CheckOff") {
-         console.log(updatedTracker);
+         if (action === "CheckOff") {
+            habits[habitID].dates = [
+               ...new Set([...habits[habitID].dates, todayString]),
+            ];
+            let indexToUpdate = habits[habitID].dates.findIndex(
+               (date) => date === todayString
+            );
+            habits[habitID].completed[indexToUpdate] =
+               "true" === event.target.getAttribute("status");
+         } else {
+            changeCreateDisplay(event);
 
-         updatedTracker.push({
-            date: todayString,
-            completed: event.currentTarget.getAttribute("status"),
-         });
-
-         setNewHabit({
-            id: habitID,
-            habit: habits[habitID].habit,
-            abbr: habits[habitID].abbr,
-            tracker: updatedTracker,
-         });
-
-         setHabits((prevHabits) => {
-            let temp = [...prevHabits];
-            temp[newHabit.id] = newHabit;
-            return [...temp];
-         });
-
-         setNewHabit({
-            id: habits.length + 1,
-            habit: "",
-            abbr: "",
-            tracker: [
-               {
-                  date: todayString,
-                  completed: false,
-               },
-            ],
-         });
-      } else {
-         changeCreateDisplay(event);
-
-         setNewHabit({
-            id: habitID,
-            habit: habits[habitID].habit,
-            abbr: habits[habitID].abbr,
-            tracker: updatedTracker,
-         });
+            setNewHabit({
+               id: habits[habitID].id,
+               habit: habits[habitID].habit,
+               abbr: habits[habitID].abbr,
+               dates: habits[habitID].dates,
+               completed: habits[habitID].completed,
+            });
+         }
+      } catch (e) {
+         console.log(e);
       }
+   }
+
+   function removeHabit(event) {
+      console.log(event.currentTarget);
+      console.log(newHabit.id);
+
+      setHabits((prevValue) => {
+         return prevValue.filter((habit) => {
+            return habit.id !== newHabit.id;
+         });
+      });
+
+      changeDisplayWarning(!displayWarning);
+      setHabitDisplay(!createHabit);
+      setAction("CheckOff");
+      event.preventDefault();
    }
 
    function addHabit(event) {
       console.log(habits);
-      console.log(newHabit.abbr === "");
 
       if (newHabit.habit.trim() === "") {
          document.querySelector(".input-habit").classList.add("empty-input");
@@ -136,12 +140,8 @@ function TodaySummary({
             id: prevValue.id + 1,
             habit: "",
             abbr: "",
-            tracker: [
-               {
-                  date: todayString,
-                  completed: false,
-               },
-            ],
+            dates: [todayString],
+            completed: [false],
          }));
       }
 
@@ -155,36 +155,39 @@ function TodaySummary({
       // const name = event.target.getAttrribute("name");
       // const value = event.target.getAttrribute("name");
 
-      if (name === "completed") {
-         console.log(event.target.getAttribute("status"));
+      // if (name === "completed") {
+      //    console.log(event.target.getAttribute("status"));
 
-         const status = event.target.getAttrribute("status");
-      } else {
-         setNewHabit((prevValue) => {
-            return {
-               ...prevValue,
-               [name]: value,
-            };
-         });
+      //    const status = event.target.getAttrribute("status");
+      // } else {
+      setNewHabit((prevValue) => {
+         return {
+            ...prevValue,
+            [name]: value,
+         };
+      });
 
-         event.stopPropagation();
-      }
+      event.stopPropagation();
+      // }
    }
 
    function changeCreateDisplay(event) {
-      console.log(event.currentTarget);
+      console.log(event.target);
       setAction(event.currentTarget.getAttribute("name"));
-      setHabitDisplay(!createHabit);
+
+      if (event.target.getAttribute("name") === "close-btn") {
+         setHabitDisplay(!createHabit);
+         setAction("CheckOff");
+      } else if (!createHabit || action !== "Edit") {
+         setHabitDisplay(!createHabit);
+      }
+
       setNewHabit({
          id: habits.length,
          habit: "",
          abbr: "",
-         tracker: [
-            {
-               date: todayString,
-               completed: false,
-            },
-         ],
+         dates: [todayString],
+         completed: [false],
       });
    }
 
@@ -213,6 +216,7 @@ function TodaySummary({
                   return (
                      <Habit
                         key={index}
+                        todayString={todayString}
                         habit={habit}
                         displayHabit={displayHabit}
                         habitInFocus={habitInFocus}
@@ -225,10 +229,23 @@ function TodaySummary({
             </div>
             <div className={"habit-text"}>{habitInFocus}</div>
          </div>
-         <div className={"create-item" + (createHabit ? " open" : "")}>
+         <div
+            className="create-item"
+            style={
+               createHabit
+                  ? {
+                       top: `${
+                          document.querySelector("#habits-container")
+                             .clientHeight
+                       }px`,
+                    }
+                  : {}
+            }
+         >
             <ExpandLessIcon
                onClick={changeCreateDisplay}
                className="btn-icon create-close-btn"
+               name="close-btn"
             />
             <form>
                <input
@@ -236,7 +253,7 @@ function TodaySummary({
                   onChange={updateHabit}
                   name="habit"
                   value={newHabit.habit}
-                  placeholder="Enter Habit"
+                  placeholder="New Habit"
                   minLength="1"
                ></input>
                <input
@@ -246,7 +263,7 @@ function TodaySummary({
                   minLength="1"
                   maxLength="2"
                   value={newHabit.abbr}
-                  placeholder="Max 2 characters abbreviation"
+                  placeholder="Abbreviation (max 2 char.)"
                ></input>
                <div
                   className={
@@ -257,13 +274,34 @@ function TodaySummary({
                      {action}
                   </button>
                   <button
-                     // onClick={removeHabit}
+                     onClick={changeDisplayWarning}
                      className={
-                        "create-btn " + (action !== "Add" ? "" : " delete-btn")
+                        "create-btn " + (action !== "Add" ? "" : " no-display")
                      }
                   >
                      Delete
                   </button>
+                  <div
+                     className={
+                        displayWarning ? "delete-warning" : "no-display"
+                     }
+                  >
+                     <p>
+                        All records of this habit will be removed. Please
+                        confirm you want to proceed.
+                     </p>
+                     <div className="btn-container half">
+                        <button onClick={removeHabit} className={"create-btn "}>
+                           Confirm
+                        </button>
+                        <button
+                           onClick={changeDisplayWarning}
+                           className={"create-btn "}
+                        >
+                           Nevermind
+                        </button>
+                     </div>
+                  </div>
                </div>
             </form>
          </div>

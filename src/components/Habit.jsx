@@ -5,6 +5,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import ClearIcon from "@material-ui/icons/Clear";
 
 function Habit({
+   todayString,
    habit,
    displayHabit,
    habitInFocus,
@@ -14,11 +15,9 @@ function Habit({
 }) {
    const [isComplete, setIsComplete] = useState(false);
 
-   console.log(action);
-
    function changeIsComplete() {
       console.log("entering changeISComplet");
-      if (action === "checkoff") {
+      if (action === "CheckOff") {
          setIsComplete(!isComplete);
       }
    }
@@ -27,13 +26,17 @@ function Habit({
    //       editHabit(habit.id);
    //    }
 
+   let todayPosition = habit.dates.findIndex((date) => date === todayString);
+
    return (
       <div className="habit-box">
          <div
             onClick={editHabit}
             name="Edit"
             className={
-               "habit-checkbox" + (action === "Edit" ? " editmode" : "")
+               "habit-checkbox" +
+               (action === "Edit" ? " editmode" : "") +
+               (habit.completed[todayPosition] ? " completed" : "")
             }
          >
             <p
@@ -43,6 +46,7 @@ function Habit({
                status={String(!isComplete)}
                name="completed"
                value={habit.id}
+               habit={habit.habit}
                className={action === "Edit" ? " editmode" : ""}
             >
                {habit.abbr}

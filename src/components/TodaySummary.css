@@ -1,6 +1,5 @@
 #today-container {
    position: relative;
-   border: 1rem solid red;
    width: 100%;
    height: 65%;
    margin-top: 5%;
@@ -18,7 +17,7 @@
    z-index: 10;
    padding: 2% 3%;
    width: 100%;
-   height: 90rem;
+   /* height: 90rem; */
    margin-bottom: 2%;
    border-top: 1rem dashed rgb(166, 177, 225);
    border-bottom: 1rem dashed rgb(166, 177, 225);
@@ -68,12 +67,12 @@ input.empty-input::placeholder {
 }
 
 .habit-text {
-   position: absolute;
+   position: relative;
    border-radius: 5rem;
    z-index: 7;
-   bottom: 0;
+   /* bottom: 0; */
    width: 94%;
-   height: 30%;
+   height: 30rem;
    padding: 5rem;
    transition: all 0.5s ease-in-out;
 }
@@ -100,8 +99,20 @@ input.empty-input::placeholder {
    width: 49%;
 }
 
-.delete-btn {
+.no-display {
    display: none;
+}
+
+.delete-warning {
+   position: absolute;
+   z-index: 20;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 110%;
+   padding: 25rem 10rem 0;
+   background: rgb(244, 238, 255);
+   /* border: 1rem dashed rgb(166, 177, 225); */
 }
 
 #habits-container + .create-item {
@@ -132,6 +143,10 @@ input.empty-input::placeholder {
 .today-lists > div {
    overflow-y: scroll;
    /* border-bottom: 1rem dashed rgba(166, 177, 225, 1); */
+}
+
+.today-lists > div {
+   border-bottom: 1rem dashed rgba(166, 177, 225, 1);
 }
 
 @media only screen and (min-width: 1200px) {
