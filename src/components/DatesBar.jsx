@@ -26,17 +26,19 @@ function DatesBar({ today, allItems, filterItems }) {
    }, [allItems]);
 
    return (
-      <div id="dates-bar">
-         {dateArray.map((date, index) => {
-            return (
-               <Day
-                  key={index}
-                  date={date}
-                  todoDates={todoDates}
-                  eventDates={eventDates}
-               />
-            );
-         })}
+      <div>
+         <div id="dates-bar">
+            {dateArray.map((date, index) => {
+               return (
+                  <Day
+                     key={index}
+                     date={date}
+                     todoDates={todoDates}
+                     eventDates={eventDates}
+                  />
+               );
+            })}
+         </div>
       </div>
    );
 }

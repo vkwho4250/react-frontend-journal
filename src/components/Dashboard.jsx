@@ -66,7 +66,7 @@ function Dashboard({
    }
 
    return (
-      <div id="dashboard">
+      <div id="dashboard" className="layout">
          <div className="summary-container">
             <div className="circle-container">
                <div className="circle-img">

@@ -1,0 +1,160 @@
+#report {
+   position: absolute;
+   top: 0;
+   width: 100vw;
+   height: 100vh;
+   border: 2rem solid yellow;
+}
+
+#report .layout {
+   top: 55%;
+   z-index: 50;
+   box-shadow: 0 -3rem 10rem 1rem rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   display: inline-block;
+}
+
+#report .header {
+   z-index: 3;
+   height: 10vh;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   padding: 0 50rem;
+}
+
+#report h1 {
+   color: white;
+   font-size: calc(min(4vw, 40rem));
+}
+
+/* .layout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    border-radius: 50rem;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 3rem 5rem 1rem rgba(0, 0, 0, 0.3);
+    display: flex;
+ } */
+
+.date-picker {
+   /* border: 1rem solid yellow; */
+   border-radius: 10rem;
+   color: var(--night-dark-purple);
+   cursor: pointer;
+}
+
+.date-dropdown {
+   position: absolute;
+   z-index: 2;
+   top: -100%;
+   right: 0;
+   width: 30%;
+   background: white;
+   transition: all 1s ease-in-out;
+}
+
+.date-dropdown.open {
+   top: 10vh;
+}
+
+.date-dropdown ul {
+   padding-left: 15rem;
+}
+
+.summary-body {
+   display: grid;
+   grid-template-columns: 2fr 2fr 3fr;
+   width: 100%;
+   height: 90%;
+   padding: 10rem;
+}
+
+.summary-body > div {
+   border: 1rem solid red;
+   height: 90%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+/* .summary-entry {
+   width: 95%;
+   height: 100%;
+} */
+
+#report .list {
+   margin: 0;
+}
+
+#report .summary-entry .header {
+   height: 45rem;
+   padding: 2rem 0;
+   align-items: baseline;
+   background: rgb(166, 177, 225);
+}
+
+#report .item-icon-container {
+   display: none;
+}
+
+#report .list-item p {
+   width: 90%;
+}
+
+.summary-entry.list {
+   padding: 0;
+}
+
+.summary-entry {
+   overflow: hidden;
+   z-index: 1;
+}
+
+#report .summary-entry .header,
+.summary-mood,
+.summary-reason {
+   padding-left: 20rem;
+}
+
+.summary-entry .text-container {
+   padding: 0 20rem 10rem;
+   height: 40vh;
+}
+
+.summary-entry .text-container p::-webkit-scrollbar {
+   display: none;
+}
+
+.summary-entry .text-container p {
+   height: 38vh;
+   overflow-y: scroll;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
+}
+
+.summary-mood {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-bottom: 10rem;
+}
+
+.summary-entry h3 {
+   color: var(--night-dark-purple);
+   font-weight: 400;
+   width: 80%;
+}
+
+.summary-mood h3 {
+   width: 70%;
+}
+
+.summary-mood .mood-box {
+   order: 0;
+}

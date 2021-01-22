@@ -193,3 +193,7 @@ svg.expand {
 svg.expand.show {
    opacity: 1;
 }
+
+#collections .indicator {
+   display: none;
+}

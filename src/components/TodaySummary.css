@@ -70,7 +70,6 @@ input.empty-input::placeholder {
    border-radius: 5rem;
    z-index: 7;
    /* bottom: 0; */
-   width: 94%;
    height: 30rem;
    padding: 5rem;
    transition: all 0.5s ease-in-out;
@@ -130,6 +129,31 @@ input.empty-input::placeholder {
 .today-lists::-webkit-scrollbar,
 .today-lists > div::-webkit-scrollbar {
    display: none;
+}
+
+.today-lists div {
+   position: relative;
+}
+
+#today-container .indicator {
+   position: absolute;
+   z-index: 5;
+   cursor: auto;
+}
+
+.habit-header .indicator {
+   top: 3rem;
+   left: -8rem;
+   border: 1rem dashed rgba(166, 177, 225);
+}
+
+.today-lists .indicator {
+   top: 13rem;
+   left: 0;
+}
+
+#today-container h4 {
+   padding-left: 10rem;
 }
 
 #today-container .list {

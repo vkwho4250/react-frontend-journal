@@ -1,0 +1,39 @@
+#avatar-container {
+   position: absolute;
+   z-index: 100;
+   top: 5vh;
+   left: 0;
+}
+
+/* #avatar-container .avatar-animal {
+   width: 20rem;
+   height: 20rem;
+} */
+
+#avatar-options {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   border-top: 1rem solid white;
+   border-bottom: 1rem solid white;
+   top: 0;
+   left: -100%;
+   transition: all 1s ease-in-out;
+   padding: 0 0 15rem;
+}
+
+#avatar-options.open {
+   left: 0;
+}
+
+.animals {
+   display: inline-block;
+   width: 40rem;
+   height: 40rem;
+   margin: 6rem 1rem;
+   cursor: pointer;
+}
+
+.display-btn {
+   margin-bottom: 5rem;
+}

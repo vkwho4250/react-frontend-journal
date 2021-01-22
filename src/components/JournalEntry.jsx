@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./JournalEntry.css";
 
 import Mood from "./Mood";
-
 import SaveIcon from "@material-ui/icons/Save";
 
 function JournalEntry({
@@ -96,17 +95,17 @@ function JournalEntry({
             </div>
 
             <h4 className="long-date">{todayFormatted}</h4>
-            {/* <div className="text-container"> */}
-            <textarea
-               className="input-entry"
-               name="content"
-               onChange={updateEntry}
-               value={currentEntry.content}
-               rows="10"
-               placeholder="Today..."
-               action="text update"
-            ></textarea>
-            {/* </div> */}
+            <div className="text-container">
+               <textarea
+                  className="input-entry"
+                  name="content"
+                  onChange={updateEntry}
+                  value={currentEntry.content}
+                  rows="10"
+                  placeholder="Today..."
+                  action="text update"
+               ></textarea>
+            </div>
             <div id="mood-container" className="input-entry">
                <p>{moodInFocus}</p>
                <div className="mood-tracker">

@@ -19,13 +19,17 @@ function Mood({
          onMouseLeave={changeMoodFocus}
          className={
             `mood-box ${mood} ${avatar}` +
-            (chosenMood === mood ? "in-front" : "")
+            (chosenMood === mood ? " in-front" : "")
          }
          name="mood"
          value={mood}
          action={action}
       >
-         <MoodSelector className="svg-expression" value={mood} />
+         <MoodSelector
+            className="svg-expression"
+            value={mood}
+            avatar={avatar}
+         />
       </div>
    );
 }

@@ -36,14 +36,15 @@
 .text-container {
    position: relative;
    margin: 10rem 0;
-   height: 30vh;
-   border: 1rem solid red;
+   height: 28vh;
+   border-bottom: 1rem dashed rgb(166, 177, 225);
+   padding: 0 0 5rem;
 }
 
 #mood-container {
    position: relative;
    height: 20vh;
-   border-top: 1rem dashed rgb(166, 177, 225);
+   /* border-top: 1rem dashed rgb(166, 177, 225); */
 }
 
 .mood-title {

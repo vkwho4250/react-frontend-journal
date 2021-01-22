@@ -1,0 +1,16 @@
+#header {
+   width: 100%;
+   height: 5vh;
+   border: 1rem solid red;
+   display: flex;
+   padding: 0 5vw;
+}
+
+#header div {
+   border: 1rem solid yellow;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   padding: 0 15rem;
+}

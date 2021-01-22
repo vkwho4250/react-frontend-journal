@@ -184,11 +184,11 @@ function TodaySummary({
       <div id="today-container">
          <div id="habits-container">
             <div className="habit-header">
+               <div className="indicator"></div>
                <h4>{(action === "Edit" ? "Edit " : "") + "Habits"}</h4>
                <div>
                   <AddIcon
                      onClick={changeCreateDisplay}
-                     // onMouseOver={changeHeaderDisplay}
                      className="btn-icon habits-icon"
                      name="Add"
                   />
@@ -296,18 +296,20 @@ function TodaySummary({
          </div>
          <div className="today-lists">
             <div>
+               <div className="indicator event"></div>
                <List
                   key="todayEvent"
-                  listTitle="Events"
+                  listTitle="Event"
                   items={eventItems}
                   removeItem={removeItem}
                   editItem={editItem}
                />
             </div>
             <div>
+               <div className="indicator todo"></div>
                <List
                   key="todayTodo"
-                  listTitle="To Dos"
+                  listTitle="To Do"
                   items={todoItems}
                   removeItem={removeItem}
                   editItem={editItem}
