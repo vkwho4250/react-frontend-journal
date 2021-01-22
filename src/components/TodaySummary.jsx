@@ -150,16 +150,6 @@ function TodaySummary({
 
    function updateHabit(event) {
       const { name, value } = event.target;
-      // console.log(event.target);
-
-      // const name = event.target.getAttrribute("name");
-      // const value = event.target.getAttrribute("name");
-
-      // if (name === "completed") {
-      //    console.log(event.target.getAttribute("status"));
-
-      //    const status = event.target.getAttrribute("status");
-      // } else {
       setNewHabit((prevValue) => {
          return {
             ...prevValue,
@@ -168,7 +158,6 @@ function TodaySummary({
       });
 
       event.stopPropagation();
-      // }
    }
 
    function changeCreateDisplay(event) {

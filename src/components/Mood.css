@@ -1,0 +1,106 @@
+.mood-box {
+   position: relative;
+   top: 0;
+   left: 0;
+   display: inline-block;
+   /* border: 1rem solid red; */
+   width: 65rem;
+   overflow: hidden;
+   cursor: pointer;
+   order: 2;
+}
+
+.mood-box.in-front {
+   order: 1;
+}
+
+.svg-expression {
+   min-width: 45rem;
+   min-height: 45rem;
+}
+
+#mood-selector .expression,
+#mood-selector .animal {
+   display: none;
+}
+
+.neutral #neutral,
+.happy #happy,
+.excited #excited,
+.mischievous #mischievous,
+.meh #meh,
+.unimpressed #unimpressed,
+.angry #angry,
+.embarassed #embarassed,
+.sad #sad,
+.distraught #distraught,
+.cat #cat,
+.cat #cat-face,
+.dog #dog,
+.bunny #bunny,
+.bear #bear,
+.panda #bear,
+.panda #panda-face,
+.deer #deer {
+   display: inline-block;
+}
+
+.neutral #face-circle,
+.neutral .back-ear,
+.neutral .front-flap {
+   fill: rgb(245, 243, 231);
+}
+
+.happy #face-circle,
+.happy .back-ear,
+.happy .front-flap {
+   fill: rgb(245, 226, 228);
+}
+
+.excited #face-circle,
+.excited .back-ear,
+.excited .front-flap {
+   fill: rgb(255, 230, 132);
+}
+
+.mischievous #face-circle,
+.mischievous .back-ear,
+.mischievous .front-flap {
+   fill: rgb(223, 252, 185);
+}
+
+.meh #face-circle,
+.meh .back-ear,
+.meh .front-flap {
+   fill: rgb(194, 246, 248);
+}
+
+.unimpressed #face-circle,
+.unimpressed .back-ear,
+.unimpressed .front-flap {
+   fill: rgb(199, 199, 199);
+}
+
+.angry #face-circle,
+.angry .back-ear,
+.angry .front-flap {
+   fill: rgb(230, 106, 139);
+}
+
+.embarassed #face-circle,
+.embarassed .back-ear,
+.embarassed .front-flap {
+   fill: rgb(255, 186, 202);
+}
+
+.sad #face-circle,
+.sad .back-ear,
+.sad .front-flap {
+   fill: rgb(171, 218, 240);
+}
+
+.distraught #face-circle,
+.distraught .back-ear,
+.distraught .front-flap {
+   fill: rgb(96, 175, 240);
+}

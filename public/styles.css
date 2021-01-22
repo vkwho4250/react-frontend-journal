@@ -1,6 +1,4 @@
 :root {
-   --day-beige: rgb(255, 246, 237);
-
    /* NIGHT THEME */
    --night-light-purple: rgb(244, 238, 255);
    --night-pink-purple: rgb(220, 214, 247);
@@ -19,7 +17,7 @@ html {
 }
 body {
    background: var(--night-dark-purple);
-   font: 14rem Quicksand, sans-serif;
+   font: 16rem Quicksand, sans-serif;
    font-weight: 400;
 }
 
@@ -47,6 +45,14 @@ h4 {
    color: var(--night-dark-purple);
 }
 
+h5 {
+   letter-spacing: 3rem;
+   text-transform: capitalize;
+   font-weight: 500;
+   /* color: white; */
+   /* font: inherit; */
+}
+
 input {
    border: none;
    border-bottom: 1rem solid var(--night-dark-purple);
@@ -56,6 +62,24 @@ input {
    color: var(--night-dark-purple);
    width: 100%;
    background: none;
+}
+
+input[type="radio"] {
+   display: none;
+}
+
+textarea {
+   border: none;
+   background: transparent;
+   outline: none;
+   font: inherit;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
+   /* font-weight: 500; */
+}
+
+textarea::-webkit-scrollbar {
+   display: none;
 }
 
 li {
@@ -75,10 +99,6 @@ label {
    color: var(--night-dark-purple);
    display: inline-block;
    cursor: pointer;
-}
-
-input[type="radio"] {
-   display: none;
 }
 
 svg.btn-icon {

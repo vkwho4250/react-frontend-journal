@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
 import { ReactComponent as NightSky } from "./images/night-sky.svg";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import Collections from "./Collections";
 import DatesBar from "./DatesBar";
 import TodaySummary from "./TodaySummary";
+import JournalEntry from "./JournalEntry";
 
 function Dashboard({
    // Variables
    today,
    todayString,
+   allMoods,
+   chosenMood,
+   setChosenMood,
+   allAnimals,
+   avatar,
+   entries,
+   setEntries,
    habits,
    setHabits,
    allItems,
@@ -44,6 +51,15 @@ function Dashboard({
    const todayFormatted = new Intl.DateTimeFormat("en-US", options).format(
       today
    );
+
+   const [quickNotes, setQuickNotes] = useState("");
+
+   function updateQuickNotes(event) {
+      const { value } = event.target;
+      setQuickNotes(value);
+
+      // event.stopPropagation();
+   }
 
    return (
       <div id="dashboard">
@@ -102,7 +118,57 @@ function Dashboard({
             changeCreateDisplay={changeCreateDisplay}
          />
 
-         <div className="entries-container"></div>
+         <div id="journal-container">
+            <div className="header">
+               <h3>Journal</h3>
+            </div>
+            <div id="entry-container">
+               <JournalEntry
+                  key={entries.length + 1}
+                  entryId={entries.length + 1}
+                  todayFormatted={todayFormatted}
+                  todayString={todayString}
+                  allMoods={allMoods}
+                  chosenMood={chosenMood}
+                  setChosenMood={setChosenMood}
+                  allAnimals={allAnimals}
+                  avatar={avatar}
+               />
+            </div>
+            <div id="quick-notes">
+               <form>
+                  <h4>Quick Notes</h4>
+                  <textarea
+                     id="textarea-notes"
+                     name="quick-notes"
+                     onChange={updateQuickNotes}
+                     value={quickNotes}
+                     rows="7"
+                     columns="50"
+                     placeholder="Notes notes notes..."
+                  >
+                     {quickNotes}
+                  </textarea>
+               </form>
+            </div>
+         </div>
+
+         {/* <div id="quick-notes">
+            <form>
+               <h4>Quick Notes</h4>
+               <textarea
+                  id="textarea-notes"
+                  name="quick-notes"
+                  onChange={updateQuickNotes}
+                  value={quickNotes}
+                  rows="7"
+                  columns="50"
+                  placeholder="Notes notes notes..."
+               >
+                  {quickNotes}
+               </textarea>
+            </form>
+         </div> */}
       </div>
    );
 }

@@ -38,7 +38,6 @@ input.empty-input::placeholder {
 
 .habit-header div {
    position: absolute;
-
    right: 0;
    top: 2rem;
 }
@@ -62,7 +61,7 @@ input.empty-input::placeholder {
    z-index: 8;
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-   grid-gap: 7rem;
+   grid-gap: 10rem;
    padding: 5rem 0;
 }
 

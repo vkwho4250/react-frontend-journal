@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 391">
+  <defs>
+    <style>
+      .mood-cls-1{fill:#65c8d0}.mood-cls-2{fill:#000000; opacity:1}.mood-cls-3{fill:#000000; opacity:0.4}
+    </style>
+  </defs>
+  <g id="mood-selector" data-name="Layer 2">
+    <g id="bear" className="animal">
+      <g className="left-ear">
+        <rect className="back-ear" x="78" y="50" width="99.8" height="244.4" rx="49.9" transform="rotate(-38 128 172)"/>
+        <rect className="front-ear" x="83" y="66" width="66.9" height="182.7" rx="33.5" transform="rotate(-38 117 158)"/>
+      </g>
+      <g className="right-ear">
+        <rect className="back-ear" data-name="back-ear" x="206" y="50" width="99.8" height="244.4" rx="49.9" transform="rotate(-142 255 172)"/>
+        <rect className="front-ear" data-name="front-ear" x="233" y="66" width="66.9" height="182.7" rx="33.5" transform="rotate(-142 266 158)"/>
+      </g>
+    </g>
+    <g id="bunny" className="animal">
+      <g className="left-ear" data-name="left-ear">
+        <rect className="back-ear" data-name="back-ear" x="88" width="99.8" height="244.4" rx="49.9" transform="translate(-1 1)"/>
+        <rect className="front-ear" data-name="front-ear" x="105" y="13" width="66.9" height="182.7" rx="33.5" transform="translate(-1 1)"/>
+      </g>
+      <g className="right-ear" data-name="right-ear">
+        <rect className="back-ear" data-name="back-ear" x="194" width="99.8" height="244.4" rx="49.9" transform="rotate(-180 244 122)"/>
+        <rect className="front-ear" data-name="front-ear" x="210" y="13" width="66.9" height="182.7" rx="33.5" transform="rotate(-180 243 105)"/>
+      </g>
+    </g>
+    <g id="deer" className="animal">
+      <path className="left-antler" data-name="left-antler" d="M113 147a1 1 0 000-1 201 201 0 01-38-20c-1-2-4-9 5-18 7-6 6-13 1-16a15 15 0 00-4-1c-6-1-13 1-16 6a30 30 0 00-4 7l-2-2-2-3a15 15 0 01-1-3c-2-4-1-12 10-19 11-6 7-21-3-27l-7-3c-12-2-22 2-27 7-9 9-14 17-16 26-3 10-1 25 10 34l9 8 6 5 2 1a261 261 0 0024 17c23 15 35 18 36 18 3 2 8 1 12-2l4-4c3-3 4-8 1-10z"/>
+      <path className="right-antler" data-name="right-antler" d="M274 147a1 1 0 011-1 201 201 0 0038-20c0-2 3-9-6-18-6-6-5-13 0-16a15 15 0 014-1c6-1 13 1 16 6a30 30 0 014 7l1-2 3-3a15 15 0 001-3c1-4 1-12-10-19-11-6-7-21 2-27l8-3c11-2 21 2 27 7 8 9 14 17 16 26 3 10 0 25-10 34l-9 8-6 5-2 1a260 260 0 01-24 17c-23 15-35 18-36 18a1 1 0 00-1 0c-3 2-8 1-11-2l-4-4c-4-3-4-8-2-10z"/>
+    </g>
+    <g id="dog" className="animal">
+      <g className="left-ear" data-name="left-ear">
+        <path className="back-ear" data-name="back-ear"  d="M128 185c-30 24-62 34-71 23 0 0-47-110-16-134 30-23 126 47 126 47 9 12-9 40-39 64z"/>
+        <path className="front-ear" data-name="front-ear" d="M127 181c-21 17-45 23-52 13 0 0-45-93-24-109 21-17 101 48 101 48 8 10-3 31-25 48z"/>
+        <path className="front-flap" d="M99 89a17 17 0 01-2 3 5 5 0 01-1 0c-6 5-83 62-95 50a6 6 0 01-1-4c0-13 21-45 36-67a21 21 0 0127-7l33 16a6 6 0 013 9z"/>
+      </g>
+      <g className="right-ear" data-name="right-ear">
+        <path className="back-ear" data-name="back-ear"  d="M245 183c30 24 61 34 70 23 0 0 47-110 17-134s-126 47-126 47c-9 11 8 40 39 64z"/>
+        <path className="front-ear" data-name="front-ear" d="M245 179c22 17 45 22 53 13 0 0 45-93 24-110-22-17-101 49-101 49-8 9 3 31 24 48z"/>
+        <path className="front-flap" d="M274 87a18 18 0 002 2 7 7 0 001 1c6 5 83 62 94 50a6 6 0 002-5c0-13-21-44-36-66a21 21 0 00-27-7l-33 16a6 6 0 00-3 9z"/>
+      </g>
+    </g>
+    <g id="cat" className="animal">
+      <g className="left-ear" data-name="left-ear">
+        <path className="back-ear" data-name="back-ear"  d="M128 185c-30 24-62 34-71 23 0 0-47-110-16-134 30-23 126 47 126 47 9 12-9 40-39 64z"/>
+        <path className="front-ear" data-name="front-ear" d="M127 181c-21 17-45 23-52 13 0 0-45-93-24-109 21-17 101 48 101 48 8 10-3 31-25 48z"/>
+      </g>
+      <g className="right-ear" data-name="right-ear">
+        <path className="back-ear" data-name="back-ear" d="M247 185c31 24 62 34 71 23 0 0 47-110 17-134-30-23-126 47-126 47-9 12 8 40 38 64z"/>
+        <path className="front-ear" data-name="front-ear" d="M248 181c22 17 45 23 53 13 0 0 45-93 24-109-22-17-101 48-101 48-8 10 3 31 24 48z"/>
+      </g>
+    </g>
+    <path id="face-circle" d="M345 236A155 155 0 11154 86l15-3 11-1a166 166 0 0115 0l11 1 15 2a155 155 0 01124 151z" />
+    <g id="cat-face" className="animal">
+      <path d="M169 83v51a7 7 0 11-15 0V86l15-3zM195 82v52a7 7 0 11-15 0V82h15zM221 85v49a7 7 0 01-15 0V83l15 2z"/>
+      <path className="mood-cls-2" d="M14 225a7 7 0 0110-1l33 21a5 5 0 011 8 7 7 0 01-9 2l-33-22a5 5 0 01-2-8z"/>
+      <path className="mood-cls-2" d="M12 268a7 7 0 009 3l36-16c3-1 4-5 3-8a7 7 0 00-9-2l-36 15c-3 2-4 5-3 8zM366 225a7 7 0 00-9-1l-33 21a5 5 0 00-2 8 7 7 0 0010 2l33-22a5 5 0 001-8z"/>
+      <path className="mood-cls-2" d="M369 268c-2 3-6 4-9 3l-36-16c-3-1-4-5-3-8 2-2 6-4 9-2l36 15c3 2 4 5 3 8z"/>
+    </g>
+    <g id="panda-face" className="animal">
+      <rect className="mood-cls-3" x="90" y="164" width="71.4" height="103" rx="35.7" transform="rotate(48 126 216)"/>
+      <rect className="mood-cls-3" x="222" y="164" width="71.4" height="103" rx="35.7" transform="rotate(132 258 216)"/>
+    </g>
+    <g id="excited" className="expression">
+      <circle className="mood-cls-2" cx="190.6" cy="247.1" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="251" width="7.5" height="25" rx="3.8"/>
+      <path className="mood-cls-2" d="M113 198a6 6 0 017-1l25 16a4 4 0 011 6 6 6 0 01-7 1l-25-16a4 4 0 01-1-6z"/>
+      <path className="mood-cls-2" d="M111 230a5 5 0 007 2l26-11a4 4 0 003-6 5 5 0 00-7-2l-27 11a4 4 0 00-2 6zM267 200a6 6 0 00-7-1l-25 15a4 4 0 00-2 7 6 6 0 008 1l25-16a4 4 0 001-6z"/>
+      <path className="mood-cls-2" d="M268 232a5 5 0 01-7 2l-26-12a4 4 0 01-2-6 5 5 0 016-2l27 12a4 4 0 012 6zM218 283c-2 18-14 30-27 30s-26-12-28-30a46 46 0 012-22l1-2a5 5 0 016 0l19 14 18-14a5 5 0 016 0 35 35 0 012 3 46 46 0 011 21z"/>
+    </g>
+    <g id="happy" className="expression">
+      <circle className="mood-cls-2" cx="133.5" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="246.8" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="190.6" cy="247.1" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="250" width="7.5" height="25" rx="3.8"/>
+      <path className="mood-cls-2" d="M168 265c0 3 2 5 3 6 5 5 12 8 20 8v-9c-8 0-12-2-17-7-3-2-6-1-6 2z"/>
+      <path className="mood-cls-2" d="M213 265c0 3-1 5-3 6-5 5-12 8-20 8v-9c8 0 12-2 17-7 3-2 6-1 6 2z"/>
+    </g>
+    <g id="mischievous" className="expression">
+      <circle className="mood-cls-2" cx="246.8" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="190.6" cy="247.1" r="10.6"/>
+      <rect className="mood-cls-2" x="195" y="248" width="7.5" height="25" rx="3.8" transform="rotate(-31 201 262)"/>
+      <path className="mood-cls-2" d="M180 273c2 3 4 4 7 4 6 2 14 0 20-4l-4-7c-7 4-11 4-18 3-4-1-6 2-5 4z"/>
+      <path className="mood-cls-2" d="M219 250c2 2 1 5 1 7-2 7-7 13-13 17l-5-8c7-3 9-8 11-15 1-3 4-4 6-1zM118 188a6 6 0 017-1l25 16a4 4 0 011 6 6 6 0 01-7 1l-25-16a4 4 0 01-1-6z"/>
+      <path className="mood-cls-2" d="M116 220a5 5 0 007 2l26-11a4 4 0 003-6 5 5 0 00-7-2l-27 11a4 4 0 00-2 6z"/>
+    </g>
+    <g id="neutral" className="expression">
+      <circle className="mood-cls-2" cx="133.4" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="246.7" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="190.4" cy="247.1" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="178" y="262" width="7.5" height="29.6" rx="3.8" transform="rotate(49 182 277)"/>
+      <rect className="mood-cls-2" x="195" y="262" width="7.5" height="29.6" rx="3.8" transform="rotate(131 198 277)"/>
+    </g>
+    <g id="meh" className="expression">
+      <circle className="mood-cls-2" cx="133.5" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="246.8" cy="204.5" r="13.3"/>
+      <circle className="mood-cls-2" cx="190.6" cy="247.1" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="187" y="246" width="7.5" height="48.7" rx="3.8" transform="rotate(70 190 271)"/>
+    </g>
+    <g id="unimpressed" className="expression">
+      <path className="mood-cls-2" d="M147 205a13 13 0 01-26 0zM261 205a13 13 0 01-27 0z"/>
+      <circle className="mood-cls-2" cx="191" cy="247.2" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="187" y="250" width="7.5" height="41.5" rx="3.8" transform="rotate(90 190 271)"/>
+    </g>
+    <g id="angry" className="expression">
+      <path className="mood-cls-2" d="M253 196c5 8 4 17-2 21s-16 1-20-7zM128 196c-5 7-4 17 2 21s15 1 20-7z"/>
+      <circle className="mood-cls-2" cx="190.8" cy="247.2" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="179" y="260" width="7.5" height="29.6" rx="3.8" transform="rotate(49 183 275)"/>
+      <rect className="mood-cls-2" x="195" y="260" width="7.5" height="29.6" rx="3.8" transform="rotate(131 199 275)"/>
+      <path className="mood-cls-2" d="M100 146l-1 8c-1 5-4 8-11 7l-8-2a3 3 0 011-5l5 1c4 1 7 1 7-5l2-8c1-3 6-2 6 1l-1 3zM117 166l-7-1c-5-1-8-4-7-11l1-9c1-4 6-2 5 1l-1 6c-1 3-1 6 5 7l7 2c3 1 2 6-1 6l-2-1zM94 184l1-9c1-5-1-9-7-10l-9-2c-3 0-4 4-1 5l6 1c3 1 6 2 5 8l-1 8c-1 3 5 4 5 1l1-2zM117 171l-8-2c-5-1-9 1-10 8l-2 9a2 2 0 105 1l1-6c1-4 1-7 7-5l8 1c2 0 4-5 1-6h-2z"/>
+    </g>
+    <g id="embarassed" className="expression">
+      <circle className="mood-cls-2" cx="190.6" cy="247.1" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="178" y="262" width="7.5" height="29.6" rx="3.8" transform="rotate(49 182 277)"/>
+      <rect className="mood-cls-2" x="195" y="262" width="7.5" height="29.6" rx="3.8" transform="rotate(131 199 277)"/>
+      <path className="mood-cls-2" d="M113 198a6 6 0 017-1l25 16a4 4 0 011 6 6 6 0 01-7 1l-25-16a4 4 0 01-1-6z"/>
+      <path className="mood-cls-2" d="M111 230a5 5 0 007 2l26-11a4 4 0 003-6 5 5 0 00-7-2l-27 11a4 4 0 00-2 6zM267 200a6 6 0 00-7-1l-25 16a4 4 0 00-2 6 6 6 0 008 1l25-16a4 4 0 001-6z"/>
+      <path className="mood-cls-2" d="M268 232a5 5 0 01-7 2l-26-12a4 4 0 01-2-6 5 5 0 016-2l27 12a4 4 0 012 6zM79 286c2 1 4 1 5-1l9-13c1-1 0-3-2-4h-5l-10 14 3 4zM61 286c2 1 5 1 6-1l9-13c1-1 0-3-2-4h-6l-9 14c-1 1 0 3 2 4zM311 284c2 1 4 1 5-1l9-13c1-1 0-3-2-4h-6l-9 14c0 1 0 3 3 4zM293 284c2 1 5 1 6-1l9-13c1-1 0-3-2-4h-6l-9 14c-1 1 0 3 2 4z"/>
+    </g>
+    <g id="sad" className="expression">
+      <path className="mood-cls-2" d="M119 205c2 9 10 14 18 12s13-11 11-19zM262 205c-2 9-11 14-19 12s-12-11-10-19z"/>
+      <circle className="mood-cls-2" cx="190.9" cy="247.2" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="179" y="260" width="7.5" height="29.6" rx="3.8" transform="rotate(49 183 275)"/>
+      <rect className="mood-cls-2" x="195" y="260" width="7.5" height="29.6" rx="3.8" transform="rotate(131 199 275)"/>
+    </g>
+    <g id="distraught" className="expression">
+      <circle className="mood-cls-2" cx="190.9" cy="247.3" r="10.6"/>
+      <rect className="mood-cls-2" x="187" y="247" width="7.5" height="25" rx="3.8"/>
+      <rect className="mood-cls-2" x="242" y="208" width="7.5" height="51.5" rx="3.8" transform="rotate(180 246 234)"/>
+      <ellipse className="mood-cls-2" cx="245.7" cy="259.8" rx="11.9" ry="7.6"/>
+      <path className="mood-cls-2" d="M214 278c0-3-2-5-4-7-4-5-12-7-19-7v8c7 0 11 3 17 8 2 2 5 1 6-2zM168 278c0-3 2-5 3-7 5-5 13-7 20-7v8c-7 0-11 3-17 8-2 2-6 1-6-2zM160 197c0 3-2 5-3 7-6 6-14 9-22 9v-10c8 0 13-3 19-8 2-3 6-2 6 2zM110 197c0 3 2 5 4 7 5 6 13 9 21 9v-10c-8 0-12-3-18-8-3-3-7-2-7 2zM271 197c0 3-2 5-4 7-5 6-13 9-21 9v-10c8 0 12-3 18-8 3-3 7-2 7 2zM221 197c-1 3 1 5 3 7 6 6 14 9 22 9v-10c-8 0-13-3-19-8-2-3-6-2-6 2z"/>
+      <rect className="mood-cls-2" x="132" y="207" width="7.5" height="51.5" rx="3.8" transform="rotate(-180 135 233)"/>
+      <ellipse className="mood-cls-2" cx="135.2" cy="258.6" rx="11.9" ry="7.6"/>
+    </g>
+  </g>
+</svg>

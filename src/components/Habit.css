@@ -1,6 +1,6 @@
 .habit-box {
    position: relative;
-   height: 22rem;
+   height: 25rem;
    /* margin-right: 8rem; */
 }
 
@@ -9,8 +9,8 @@
    border: 1rem dashed rgba(66, 72, 116, 0.5);
    background: white;
    border-radius: 50%;
-   width: 23rem;
-   height: 23rem;
+   width: 25rem;
+   height: 25rem;
 }
 
 .habit-checkbox.editmode {
@@ -27,7 +27,7 @@
    position: relative;
    z-index: 1;
    padding: 3rem 0;
-   font-size: 12rem;
+   font-size: 14rem;
    cursor: pointer;
    height: 100%;
    width: 100%;

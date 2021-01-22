@@ -1,0 +1,127 @@
+.journal-entry {
+   position: relative;
+   width: 95%;
+   height: 90%;
+   border-radius: 0 10rem 10rem 0;
+   box-shadow: 0 3rem 5rem 2rem rgba(66, 72, 116, 0.3);
+   overflow: hidden;
+}
+
+.long-date {
+   text-align: right;
+}
+
+.input-entry {
+   padding: 5rem 0 5rem 20rem;
+   width: 95%;
+   height: 100%;
+}
+
+.text-container {
+   position: relative;
+   margin: 10rem 0;
+   height: 30vh;
+   border: 1rem solid red;
+}
+
+#mood-container {
+   position: relative;
+   height: 20vh;
+   border-top: 1rem dashed rgb(166, 177, 225);
+}
+
+.mood-title {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 100%;
+   background: white;
+   height: 60%;
+   display: flex;
+   align-items: center;
+   transition: all 1s ease-in-out;
+   padding: 0 20rem;
+}
+
+.mood-title.reveal {
+   right: -150%;
+}
+
+.mood-title h3 {
+   order: 3;
+   padding-left: 10rem;
+}
+
+.mood-tracker {
+   /* border: 1rem solid blue; */
+   overflow-x: scroll;
+   overflow-y: hidden;
+   width: 100%;
+}
+
+/* width */
+.mood-tracker::-webkit-scrollbar {
+   height: 1vh;
+}
+
+/* Track */
+.mood-tracker::-webkit-scrollbar-track {
+   background: rgb(244, 238, 255);
+}
+
+/* Handle */
+.mood-tracker::-webkit-scrollbar-thumb {
+   background: rgb(166, 177, 225);
+}
+
+/* Handle on hover */
+.mood-tracker::-webkit-scrollbar-thumb:hover {
+   background: rgb(66, 72, 116);
+}
+
+.mood-indicators {
+   position: relative;
+   /** 10 expressions with min-width 40rem */
+   width: calc(max(100%, 10 * 45rem));
+   display: flex;
+}
+
+.mood-description {
+   position: relative;
+   height: 100%;
+   margin-top: 5rem;
+   /* background: rgb(166, 177, 225); */
+   /* border-radius: 5rem; */
+   display: flex;
+   align-items: center;
+   padding: 5rem;
+}
+
+/* .mood-description::before {
+   display: inline-block;
+   content: "";
+   position: absolute;
+   top: -13rem;
+   left: 5rem;
+   background: rgb(166, 177, 225);
+   width: 15rem;
+   height: 15rem;
+   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+} */
+
+#mood-container p {
+   position: relative;
+   text-transform: capitalize;
+   height: 20rem;
+   width: 100%;
+}
+
+.entry-reason {
+   position: relative;
+   top: 0;
+   left: 0;
+   padding: 5rem 0;
+   width: 100%;
+   height: 50%;
+   border-top: 1rem dashed rgb(166, 177, 225);
+}

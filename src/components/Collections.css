@@ -5,10 +5,7 @@
    width: 25%;
    height: 100%;
    box-shadow: 5rem 0 20rem 5rem rgba(66, 72, 116, 0.4);
-   background: linear-gradient(
-      /* rgba(244, 238, 255, 0.7), */ transparent 30%,
-      rgba(244, 238, 255, 1)
-   );
+   background: linear-gradient(transparent 30%, rgba(244, 238, 255, 1));
 }
 
 .header {

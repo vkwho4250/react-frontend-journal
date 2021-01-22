@@ -53,9 +53,7 @@
    width: 30%;
    height: 100%;
    background: white;
-   /* background: linear-gradient(to right, white 80%, transparent 90%); */
    border-radius: 50rem 0 0 50rem;
-   /* box-shadow: 5rem 0 20rem 5rem rgba(66, 72, 116, 0.4); */
    padding: 1% 2%;
 }
 
@@ -151,6 +149,91 @@
    z-index: 10;
    left: 0;
    bottom: 0;
+}
+
+#journal-container {
+   position: relative;
+   z-index: -1;
+   top: 0;
+   /*Width = Dashboard * (1 - summary - collections) - ribbon - datebar*/
+   width: calc(90vw * (1 - 0.3 - 0.25) - 2vw - 90rem);
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+#journal-container .header {
+   background: rgb(166, 177, 225, 1);
+   position: relative;
+   width: 100%;
+}
+
+#journal-container h3 {
+   color: rgba(66, 72, 116, 1);
+   font-weight: 400;
+}
+
+#entry-container {
+   position: relative;
+   width: 100%;
+   height: 80%;
+   display: flex;
+   /* justify-content: center; */
+   align-items: center;
+}
+
+#quick-notes {
+   position: relative;
+   z-index: -1;
+   width: 100%;
+   height: 20%;
+
+   /* height: 30%; */
+   /* background: red; */
+   box-shadow: 0 -5rem 20rem 5rem rgba(66, 72, 116, 0.3);
+   /* background: url(./images/background-dots.png); */
+   /* background: url("https://www.transparenttextures.com/patterns/lined-paper.png")
+      no-repeat;
+   background-size: cover; */
+   overflow: hidden;
+}
+
+#quick-notes::before {
+   display: inline-block;
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: url(./images/background-dots.png);
+   /* background: url("https://www.transparenttextures.com/patterns/lined-paper.png")
+      no-repeat; */
+   background-size: contain;
+   opacity: 0.7;
+   border-radius: 0 0 50rem 0;
+}
+
+#quick-notes h4 {
+   padding: 10rem 10rem 10rem 30rem;
+   background: white;
+   width: 100%;
+   /* border-bottom: 1rem dashed rgb(166, 177, 225); */
+   color: rgba(66, 72, 116, 1);
+   /* color: white; */
+   background: rgb(166, 177, 225, 1);
+   font-weight: 700;
+}
+
+#textarea-notes {
+   position: relative;
+   z-index: 99;
+   padding: 10rem 20rem 10rem 40rem;
+   width: 95%;
+   margin-top: 2rem;
+   /* background: blue; */
+   font-weight: 500;
 }
 
 @media only screen and (min-width: 1200px) {

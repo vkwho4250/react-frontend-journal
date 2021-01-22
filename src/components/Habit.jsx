@@ -1,18 +1,7 @@
 import React, { useState } from "react";
 import "./Habit.css";
 
-import EditIcon from "@material-ui/icons/Edit";
-import ClearIcon from "@material-ui/icons/Clear";
-
-function Habit({
-   todayString,
-   habit,
-   displayHabit,
-   habitInFocus,
-   updateHabit,
-   editHabit,
-   action,
-}) {
+function Habit({ todayString, habit, displayHabit, editHabit, action }) {
    const [isComplete, setIsComplete] = useState(false);
 
    function changeIsComplete() {
