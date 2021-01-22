@@ -1,9 +1,9 @@
 import React from "react";
 import "./Dropdown.css";
 
-function Dropdown({ option, optionSelected }) {
+function Dropdown({ option, optionSelected, grouping }) {
    function useOption() {
-      optionSelected(option);
+      optionSelected(grouping, option);
    }
 
    return (

@@ -22,21 +22,25 @@ function Dashboard({
    setHabits,
    allItems,
    setAllItems,
+   listGroups,
    newItem,
    setNewItem,
    itemType,
    setItemType,
    itemsOverflow,
    createDisplay,
+   groupingDisplay,
    action,
    // Functions
    filterItems,
+   listGrouping,
    updateItem,
    addItem,
    removeItem,
    editItem,
    optionSelected,
    changeCreateDisplay,
+   changeGroupingDisplay,
 }) {
    const options = {
       year: "numeric",
@@ -105,17 +109,21 @@ function Dashboard({
             setNewItem={setNewItem}
             itemType={itemType}
             setItemType={setItemType}
+            listGroups={listGroups}
             itemsOverflow={itemsOverflow}
             createDisplay={createDisplay}
+            groupingDisplay={groupingDisplay}
             action={action}
             // Functions
             filterItems={filterItems}
+            listGrouping={listGrouping}
             updateItem={updateItem}
             addItem={addItem}
             removeItem={removeItem}
             editItem={editItem}
             optionSelected={optionSelected}
             changeCreateDisplay={changeCreateDisplay}
+            changeGroupingDisplay={changeGroupingDisplay}
          />
 
          <div id="journal-container">
@@ -124,10 +132,11 @@ function Dashboard({
             </div>
             <div id="entry-container">
                <JournalEntry
-                  key={entries.length + 1}
-                  entryId={entries.length + 1}
+                  key={entries.length}
                   todayFormatted={todayFormatted}
                   todayString={todayString}
+                  todayEntry={entries[entries.length - 1]}
+                  setEntries={setEntries}
                   allMoods={allMoods}
                   chosenMood={chosenMood}
                   setChosenMood={setChosenMood}
@@ -152,23 +161,6 @@ function Dashboard({
                </form>
             </div>
          </div>
-
-         {/* <div id="quick-notes">
-            <form>
-               <h4>Quick Notes</h4>
-               <textarea
-                  id="textarea-notes"
-                  name="quick-notes"
-                  onChange={updateQuickNotes}
-                  value={quickNotes}
-                  rows="7"
-                  columns="50"
-                  placeholder="Notes notes notes..."
-               >
-                  {quickNotes}
-               </textarea>
-            </form>
-         </div> */}
       </div>
    );
 }

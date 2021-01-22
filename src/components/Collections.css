@@ -8,6 +8,10 @@
    background: linear-gradient(transparent 30%, rgba(244, 238, 255, 1));
 }
 
+.icon-container .btn-icon {
+   color: white;
+}
+
 .header {
    position: relative;
    z-index: 10;
@@ -68,6 +72,7 @@ svg.create-close-btn {
    left: 50%;
    bottom: 0%;
    transform: translate(-50%, 50%);
+   color: white;
    background: rgb(66, 72, 116);
    border-radius: 50%;
 }
@@ -99,6 +104,19 @@ svg.create-close-btn {
    /* height: 50rem; */
    /* padding: 5rem 0 0; */
    box-shadow: 0 5rem 5rem -3rem rgba(97, 101, 138, 0.3);
+}
+
+.grouping-options {
+   position: absolute;
+   z-index: 2;
+   top: -100%;
+   padding: 0 20rem 10rem;
+   background: white;
+   transition: all 1s ease-in-out;
+}
+
+.grouping-options.open {
+   top: 50rem;
 }
 
 .icon-container {

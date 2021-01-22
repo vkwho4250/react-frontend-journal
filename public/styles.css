@@ -84,6 +84,7 @@ textarea::-webkit-scrollbar {
 
 li {
    list-style: none;
+   text-transform: capitalize;
 }
 
 button {
@@ -102,7 +103,7 @@ label {
 }
 
 svg.btn-icon {
-   color: white;
+   color: var(--night-dark-purple);
    width: 15rem;
    height: 15rem;
    cursor: pointer;

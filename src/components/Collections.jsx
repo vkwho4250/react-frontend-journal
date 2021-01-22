@@ -17,161 +17,54 @@ function Collections({
    setNewItem,
    itemType,
    setItemType,
+   listGroups,
    itemsOverflow,
    createDisplay,
+   groupingDisplay,
    action,
    //Functions
    filterItems,
+   listGrouping,
    addItem,
    removeItem,
    editItem,
    optionSelected,
    changeCreateDisplay,
+   changeGroupingDisplay,
 }) {
-   // > ==== =====================
-
-   // const todayString = today.toISOString().substring(0, 10);
-
-   // const [itemsOverflow, setItemsOverflow] = useState(false);
-   // const [createDisplay, setCreateDisplay] = useState(false);
-   // const [itemType, setItemType] = useState("general");
-   // const [suggestionDisplay, setSuggestionDisplay] = useState(false);
-   // const [action, setAction] = useState("Add");
-   // const [newItem, setNewItem] = useState({
-   //    id: allItems.length,
-   //    type: "general",
-   //    category: "",
-   //    content: "",
-   //    date: todayString,
-   // });
-
-   // function itemsInList(listTitle) {
-   //    console.log("itemsInList");
-
-   //    return allItems.filter((item) => {
-   //       return item.category === listTitle;
-   //    });
-   // }
-
-   // function editItem(itemID) {
-   //    setAction("Submit Edit");
-   //    setCreateDisplay(true);
-   //    setItemType(allItems[itemID].type);
-
-   //    setNewItem({
-   //       id: itemID,
-   //       type: allItems[itemID].type,
-   //       category: allItems[itemID].category,
-   //       content: allItems[itemID].content,
-   //       date: allItems[itemID].date,
-   //    });
-   // }
-
-   // function addItem(event) {
-   //    console.log(allItems);
-   //    if (newItem.content.trim() === "") {
-   //       document.querySelector(".input-content").classList.add("empty-input");
-   //    } else if (newItem.category.trim() === "") {
-   //       document
-   //          .querySelector(".input-content")
-   //          .classList.remove("empty-input");
-   //       document.querySelector(".input-category").classList.add("empty-input");
-   //    } else {
-   //       document
-   //          .querySelector(".input-content")
-   //          .classList.remove("empty-input");
-   //       document
-   //          .querySelector(".input-category")
-   //          .classList.remove("empty-input");
-
-   //       setAllItems((prevItems) => {
-   //          if (action === "Add") {
-   //             return [...prevItems, newItem];
-   //          } else {
-   //             let temp = [...prevItems];
-   //             temp[newItem.id] = newItem;
-   //             return [...temp];
-   //          }
-   //       });
-
-   //       setCreateDisplay(false);
-   //       setAction("Add");
-   //       setNewItem((prevValue) => ({
-   //          id: prevValue.id + 1,
-   //          todo: "general",
-   //          category: "",
-   //          content: "",
-   //          date: todayString,
-   //       }));
-   //    }
-
-   //    areItemsOverflowing();
-   //    event.preventDefault();
-   // }
-
-   // function removeItem(itemID) {
-   //    setAllItems((prevItems) => {
-   //       return prevItems.filter((item) => {
-   //          return item.id !== itemID;
-   //       });
-   //    });
-
-   //    areItemsOverflowing();
-   // }
-
-   // function optionSelected(option) {
-   //    setNewItem((prevContent) => {
-   //       return {
-   //          ...prevContent,
-   //          ["category"]: option,
-   //       };
-   //    });
-   // }
-
-   // function changeCreateDisplay() {
-   //    setCreateDisplay(!createDisplay);
-   //    setNewItem({
-   //       id: allItems.length,
-   //       type: "general",
-   //       category: "",
-   //       content: "",
-   //       date: todayString,
-   //    });
-   //    setItemType("general");
-   // }
-
-   // function areItemsOverflowing() {
-   //    if (
-   //       document.querySelector(".list-container").scrollHeight >
-   //       document.querySelector(".list-container").offsetHeight
-   //    ) {
-   //       setItemsOverflow(true);
-   //    } else {
-   //       setItemsOverflow(false);
-   //    }
-   // }
-
-   // > =========================
-
-   //Collection
-
    const [moveUp, setMoveUp] = useState(false);
    const [headerDisplay, setHeaderDisplay] = useState("");
    const [suggestionDisplay, setSuggestionDisplay] = useState(false);
 
    const [categories, setCategories] = useState([]);
+   // const [listGroups, setListGroups] = useState({
+   //    propertyName: "",
+   //    propertyValues: [],
+   // });
+
+   // function listGrouping(property) {
+   //    let temp = allItems.map((item) => item[property]);
+   //    temp.sort();
+
+   //    setListGroups({
+   //       propertyName: property,
+   //       propertyValues: [...new Set(temp)],
+   //    });
+   // }
+   // const [groupingDisplay, setGroupingDisplay] = useState(false);
+
+   // function changeGroupingDisplay(event) {
+   //    console.log(event.currentTarget);
+   //    setGroupingDisplay(!groupingDisplay);
+   // }
 
    useEffect(() => {
-      listCategories();
+      const categoryList = [
+         ...new Set(allItems.map((item) => item["category"])),
+      ];
+      setCategories(categoryList.sort()); //getting categories for suggesting menu
+      listGrouping("category"); //Default Grouping
    }, [allItems]);
-
-   //! Need to change this function to adapt to other "groupings"
-   function listCategories() {
-      let temp = allItems.map((item) => item.category);
-      temp.sort();
-
-      setCategories([...new Set(temp)]);
-   }
 
    function updateItem(event) {
       const { name, value } = event.target;
@@ -227,12 +120,37 @@ function Collections({
                   name="Add an item"
                />
                <EditIcon
+                  onClick={changeGroupingDisplay}
                   onMouseOver={changeHeaderDisplay}
                   className="btn-icon"
-                  name="Edit categories"
+                  name="Edit groupings"
                />
             </div>
          </div>
+
+         <div
+            className={
+               "suggestions grouping-options" + (groupingDisplay ? " open" : "")
+            }
+         >
+            <ExpandLessIcon
+               onClick={changeGroupingDisplay}
+               className="btn-icon create-close-btn"
+            />
+            <ul>
+               {["category", "date", "type"].map((property, index) => {
+                  return (
+                     <Dropdown
+                        key={index}
+                        option={property}
+                        optionSelected={optionSelected}
+                        grouping={property}
+                     />
+                  );
+               })}
+            </ul>
+         </div>
+
          <div className={"create-item" + (createDisplay ? " show" : "")}>
             <ExpandLessIcon
                onClick={changeCreateDisplay}
@@ -294,15 +212,14 @@ function Collections({
                   <div className="suggestions">
                      <ul>
                         {categories.map((category, index) => {
-                           if (category !== "") {
-                              return (
-                                 <Dropdown
-                                    key={index}
-                                    option={category}
-                                    optionSelected={optionSelected}
-                                 />
-                              );
-                           }
+                           return (
+                              <Dropdown
+                                 key={index}
+                                 option={category}
+                                 optionSelected={optionSelected}
+                                 grouping="category-suggestions"
+                              />
+                           );
                         })}
                      </ul>
                   </div>
@@ -322,12 +239,16 @@ function Collections({
          </div>
 
          <div className="list-container">
-            {categories.map((listTitle, index) => {
-               let listItems = filterItems(allItems, "category", listTitle);
+            {listGroups.propertyValues.map((grouping, index) => {
+               let listItems = filterItems(
+                  allItems,
+                  listGroups.propertyName,
+                  grouping
+               );
                return (
                   <List
                      key={index}
-                     listTitle={listTitle}
+                     listTitle={grouping}
                      items={listItems}
                      removeItem={removeItem}
                      editItem={editItem}

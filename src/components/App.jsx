@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dashboard from "./Dashboard";
 
 function App() {
@@ -19,17 +19,6 @@ function App() {
 
    const allAnimals = ["cat", "dog", "bunny", "bear", "panda", "deer"];
    const [avatar, setAvatar] = useState("");
-   // const [chosenMood, setChosenMood] = useState("neutral");
-
-   // function selectMood(event) {
-   //    const { value } = event.target;
-   //    setChosenMood(value);
-   // }
-
-   function selectAvatar(event) {
-      const { value } = event.target;
-      setAvatar(value);
-   }
 
    const [entries, setEntries] = useState([
       {
@@ -39,7 +28,7 @@ function App() {
          content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget scelerisque est. Ut vitae nibh magna. Vestibulum ex est, tincidunt id viverra ac, scelerisque id sem. Mauris sagittis neque felis, ac sodales nisl pellentesque vitae. In hac habitasse platea dictumst. Proin id cursus magna. Maecenas imperdiet ex sit amet rutrum suscipit. Sed ante magna, dictum eu imperdiet ut, molestie ultrices tortor. Maecenas lobortis nunc eu massa condimentum, vel bibendum magna commodo. Phasellus commodo egestas sapien, nec aliquet mi sollicitudin in. In condimentum eget ex a venenatis. Sed finibus, nunc sagittis hendrerit malesuada, lacus orci semper dolor, nec tristique tellus turpis ut dolor. Phasellus hendrerit ac turpis sed ornare. Praesent maximus feugiat orci nec tincidunt.",
          mood: "Sad",
-         moodReason: "I dropped my taco.",
+         reason: "I dropped my taco.",
       },
       {
          id: 1,
@@ -48,7 +37,7 @@ function App() {
          content:
             "Suspendisse vitae elementum ante. Donec placerat quis est vel lacinia. Aenean nec tincidunt nisi, ut ullamcorper odio. Mauris auctor fringilla mauris sed posuere. Praesent ullamcorper pharetra nibh, ut interdum enim iaculis non. Maecenas fringilla eu nibh at placerat. Fusce et mi risus. Etiam hendrerit, mauris in semper mollis, neque ligula tempor nibh, vitae varius orci eros vitae metus. Aliquam nulla odio, ullamcorper sit amet lectus ac, hendrerit tempor purus. Sed blandit, mi id elementum tristique, purus diam sodales erat, et vehicula eros risus et felis. In hac habitasse platea dictumst. Nulla facilisis turpis a pretium convallis.",
          mood: "Happy",
-         moodReason: "I made tacos.",
+         reason: "I made tacos.",
       },
    ]);
 
@@ -115,10 +104,34 @@ function App() {
       },
    ]);
 
+   // > ========  MANAGING COLLECTIONS -- JOURNAL ENTRIES =================
+
+   function selectAvatar(event) {
+      const { value } = event.target;
+      setAvatar(value);
+   }
+
+   useEffect(() => {
+      setEntries((prevValue) => {
+         return [
+            ...prevValue,
+            {
+               id: prevValue.length,
+               title: "",
+               date: todayString,
+               content: "",
+               mood: "neutral",
+               reason: "",
+            },
+         ];
+      });
+   }, []);
+
    // > ========  MANAGING COLLECTIONS -- ITEMS AND EVENTS =================
 
    const [itemsOverflow, setItemsOverflow] = useState(false);
    const [createDisplay, setCreateDisplay] = useState(false);
+   const [groupingDisplay, setGroupingDisplay] = useState(false);
    const [itemType, setItemType] = useState("general");
 
    const [action, setAction] = useState("Add");
@@ -130,11 +143,16 @@ function App() {
       date: todayString,
    });
 
-   function filterItems(array, byProperty, propertyName) {
+   const [listGroups, setListGroups] = useState({
+      propertyName: "",
+      propertyValues: [],
+   });
+
+   function filterItems(array, propertyName, propertyValue) {
       console.log("filterItems");
 
       return array.filter((item) => {
-         return item[byProperty] === propertyName;
+         return item[propertyName] === propertyValue;
       });
    }
 
@@ -203,13 +221,39 @@ function App() {
       areItemsOverflowing();
    }
 
-   function optionSelected(option) {
-      setNewItem((prevContent) => {
-         return {
-            ...prevContent,
-            ["category"]: option,
-         };
+   function optionSelected(grouping, option) {
+      if (grouping === "category-suggestions") {
+         setNewItem((prevContent) => {
+            return {
+               ...prevContent,
+               ["category"]: option,
+            };
+         });
+      } else {
+         listGrouping(grouping);
+         setGroupingDisplay(false);
+      }
+   }
+
+   function listGrouping(property) {
+      console.log(property);
+      let temp = allItems.map((item) => item[property]);
+      temp.sort();
+
+      setListGroups({
+         propertyName: property,
+         propertyValues: [...new Set(temp)],
       });
+   }
+
+   function changeGroupingDisplay(event) {
+      console.log(event.currentTarget);
+
+      if (event.currentTarget.getAttribute("name") === "Edit groupings") {
+         setGroupingDisplay(!groupingDisplay);
+      } else {
+         setGroupingDisplay(false);
+      }
    }
 
    function changeCreateDisplay() {
@@ -252,20 +296,24 @@ function App() {
             setHabits={setHabits}
             allItems={allItems}
             setAllItems={setAllItems}
+            listGroups={listGroups}
             newItem={newItem}
             setNewItem={setNewItem}
             itemType={itemType}
             setItemType={setItemType}
             itemsOverflow={itemsOverflow}
             createDisplay={createDisplay}
+            groupingDisplay={groupingDisplay}
             action={action}
             // Functions
             filterItems={filterItems}
+            listGrouping={listGrouping}
             addItem={addItem}
             removeItem={removeItem}
             editItem={editItem}
             optionSelected={optionSelected}
             changeCreateDisplay={changeCreateDisplay}
+            changeGroupingDisplay={changeGroupingDisplay}
          />
       </div>
    );

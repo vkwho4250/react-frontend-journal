@@ -3,10 +3,14 @@ import "./JournalEntry.css";
 
 import Mood from "./Mood";
 
+import SaveIcon from "@material-ui/icons/Save";
+
 function JournalEntry({
-   entryId,
+   // entryId,
    todayFormatted,
    todayString,
+   todayEntry,
+   setEntries,
    allMoods,
    // chosenMood,
    allAnimals,
@@ -15,12 +19,12 @@ function JournalEntry({
    const [showMoodChoices, setShowMoodChoices] = useState(false);
    const [moodInFocus, setMoodFocus] = useState("");
    const [currentEntry, setCurrentEntry] = useState({
-      id: entryId,
-      title: "",
-      date: todayString,
-      content: "",
-      mood: "neutral",
-      reason: "",
+      id: todayEntry.id,
+      title: todayEntry.title,
+      date: todayEntry.date,
+      content: todayEntry.content,
+      mood: todayEntry.mood,
+      reason: todayEntry.reason,
    });
 
    function changeMoodFocus(event) {
@@ -31,20 +35,13 @@ function JournalEntry({
       }
    }
 
-   // function selectMood(event) {
-   //    console.log(event.currentTarget);
-   //    setChosenMood(event.currentTarget.getAttribute("value"));
-   // }
-
-   function resetEntry() {
-      setCurrentEntry({
-         id: entryId,
-         title: "",
-         date: todayString,
-         content: "",
-         mood: "neutral",
-         reason: "",
+   function submitEntry(event) {
+      setEntries((prevValue) => {
+         console.log(prevValue);
+         return [...prevValue.slice(0, todayEntry.id), currentEntry];
       });
+
+      event.preventDefault();
    }
 
    function revealChoices() {
@@ -52,10 +49,6 @@ function JournalEntry({
    }
 
    function updateEntry(event) {
-      console.log(currentEntry);
-      console.log(event.target);
-      console.log(event.currentTarget);
-
       const action = event.currentTarget.getAttribute("action");
 
       if (action !== "text update") {
@@ -88,17 +81,21 @@ function JournalEntry({
    return (
       <div className="journal-entry">
          <form>
-            <h2>
-               <input
-                  className="input-entry entry-title"
-                  onChange={updateEntry}
-                  name="title"
-                  value={currentEntry.title}
-                  placeholder="Title"
-                  action="text update"
-               ></input>
-            </h2>
-            <h4 className="input-entry long-date">{todayFormatted}</h4>
+            <div className="entry-header">
+               <h2>
+                  <input
+                     className="entry-title"
+                     onChange={updateEntry}
+                     name="title"
+                     value={currentEntry.title}
+                     placeholder="Title"
+                     action="text update"
+                  ></input>
+               </h2>
+               <SaveIcon onClick={submitEntry} className="btn-icon" />
+            </div>
+
+            <h4 className="long-date">{todayFormatted}</h4>
             {/* <div className="text-container"> */}
             <textarea
                className="input-entry"

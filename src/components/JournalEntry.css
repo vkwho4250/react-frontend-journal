@@ -7,6 +7,22 @@
    overflow: hidden;
 }
 
+.entry-header {
+   display: flex;
+   align-items: center;
+   border-bottom: 1rem solid rgba(66, 72, 116, 1);
+   margin-bottom: 5rem;
+}
+
+.entry-header h2 {
+   width: 93%;
+}
+
+.entry-title {
+   border-bottom: none;
+   padding-left: 20rem;
+}
+
 .long-date {
    text-align: right;
 }
@@ -33,8 +49,8 @@
 .mood-title {
    position: absolute;
    top: 0;
-   right: 0;
-   width: 100%;
+   left: 0;
+   width: 110%;
    background: white;
    height: 60%;
    display: flex;
@@ -44,7 +60,7 @@
 }
 
 .mood-title.reveal {
-   right: -150%;
+   left: 150%;
 }
 
 .mood-title h3 {
