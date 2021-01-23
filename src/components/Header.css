@@ -1,16 +1,29 @@
 #header {
+   position: absolute;
+   z-index: 100;
    width: 100%;
    height: 5vh;
    border: 1rem solid red;
    display: flex;
    padding: 0 5vw;
+   justify-content: space-between;
+   align-items: center;
 }
 
-#header div {
-   border: 1rem solid yellow;
+.header-actions {
    display: flex;
+   width: 55%;
    align-items: center;
-   justify-content: center;
-   cursor: pointer;
+   height: 100%;
+   justify-content: space-around;
    padding: 0 15rem;
+}
+
+.header-actions div {
+   width: 100%;
+}
+
+#header h5 {
+   text-align: center;
+   cursor: pointer;
 }

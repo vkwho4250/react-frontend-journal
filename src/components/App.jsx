@@ -20,8 +20,8 @@ function App() {
       "distraught",
    ];
 
+   const [showReport, setShowReport] = useState(false);
    const [avatar, setAvatar] = useState("default");
-
    const [entries, setEntries] = useState([
       {
          id: 0,
@@ -30,7 +30,8 @@ function App() {
          content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget scelerisque est. Ut vitae nibh magna. Vestibulum ex est, tincidunt id viverra ac, scelerisque id sem. Mauris sagittis neque felis, ac sodales nisl pellentesque vitae. In hac habitasse platea dictumst. Proin id cursus magna. Maecenas imperdiet ex sit amet rutrum suscipit. Sed ante magna, dictum eu imperdiet ut, molestie ultrices tortor. Maecenas lobortis nunc eu massa condimentum, vel bibendum magna commodo. Phasellus commodo egestas sapien, nec aliquet mi sollicitudin in. In condimentum eget ex a venenatis. Sed finibus, nunc sagittis hendrerit malesuada, lacus orci semper dolor, nec tristique tellus turpis ut dolor. Phasellus hendrerit ac turpis sed ornare. Praesent maximus feugiat orci nec tincidunt.",
          mood: "sad",
-         reason: "I dropped my taco.",
+         reason:
+            "I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.I dropped my taco.",
       },
       {
          id: 1,
@@ -65,15 +66,16 @@ function App() {
          id: 0,
          type: "todo",
          category: "Shopping",
-         content: "This is a test for T1",
-         date: "2021-01-23",
+         content:
+            "This is a test,This is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a test",
+         date: "2021-01-26",
       },
       {
          id: 1,
          type: "general",
          category: "Banking",
-         content: "This is a test for T2",
-         date: "2021-01-24",
+         content: "this is a derp.",
+         date: "2021-01-26",
       },
       {
          id: 2,
@@ -95,7 +97,7 @@ function App() {
          type: "event",
          category: "Birthdays",
          content: "This is Jam's Bday",
-         date: "2021-01-15",
+         date: "2021-01-26",
       },
       {
          id: 5,
@@ -276,13 +278,16 @@ function App() {
 
    return (
       <div id="app-container">
-         <Header />
+         <Header showReport={showReport} setShowReport={setShowReport} />
          <Avatar avatar={avatar} setAvatar={setAvatar} />
          <Report
+            today={today}
             avatar={avatar}
             allItems={allItems}
             entries={entries}
             filterItems={filterItems}
+            habits={habits}
+            showReport={showReport}
          />
          <Dashboard
             // Variables

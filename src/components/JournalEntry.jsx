@@ -108,7 +108,7 @@ function JournalEntry({
             </div>
             <div id="mood-container" className="input-entry">
                <p>{moodInFocus}</p>
-               <div className="mood-tracker">
+               <div className="mood-tracker scrollbar">
                   <div className="mood-indicators">
                      {allMoods.map((mood, index) => {
                         return (

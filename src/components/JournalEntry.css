@@ -77,22 +77,22 @@
 }
 
 /* width */
-.mood-tracker::-webkit-scrollbar {
+.scrollbar::-webkit-scrollbar {
    height: 1vh;
 }
 
 /* Track */
-.mood-tracker::-webkit-scrollbar-track {
+.scrollbar::-webkit-scrollbar-track {
    background: rgb(244, 238, 255);
 }
 
 /* Handle */
-.mood-tracker::-webkit-scrollbar-thumb {
+.scrollbar::-webkit-scrollbar-thumb {
    background: rgb(166, 177, 225);
 }
 
 /* Handle on hover */
-.mood-tracker::-webkit-scrollbar-thumb:hover {
+.scrollbar::-webkit-scrollbar-thumb:hover {
    background: rgb(66, 72, 116);
 }
 
