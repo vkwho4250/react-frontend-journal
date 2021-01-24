@@ -49,8 +49,8 @@ function App() {
          id: 0,
          habit: "Drink 8 cups of water a day",
          abbr: "W",
-         dates: ["2021-01-19"],
-         completed: [true],
+         dates: ["2021-01-10", "2021-01-11", "2021-01-12"],
+         completed: [true, false, true],
       },
       {
          id: 1,
@@ -66,8 +66,7 @@ function App() {
          id: 0,
          type: "todo",
          category: "Shopping",
-         content:
-            "This is a test,This is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a test",
+         content: "THis is a longer test but not overly long",
          date: "2021-01-26",
       },
       {

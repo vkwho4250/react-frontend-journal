@@ -30,12 +30,20 @@ function Report({
    useEffect(() => {
       const entryDates = entries.map((entry) => entry.date);
       const itemDates = allItems.map((item) => item.date);
+
       const combinedDates = [...new Set([...entryDates, ...itemDates].sort())];
+      setAllDates(combinedDates);
+
+      const reducer = (accumulator, currentValue) =>
+         accumulator < currentValue ? accumulator : currentValue;
+
+      const firstHabitDate = habits
+         .map((habit) => habit.dates.reduce(reducer))
+         .reduce(reducer);
 
       setTrackerDates(
-         settingDates(new Date(combinedDates[0]).setHours(24, 0, 0, 0), today)
+         settingDates(new Date(firstHabitDate).setHours(24, 0, 0, 0), today)
       );
-      setAllDates(combinedDates);
    }, [allItems, entries, habits]);
 
    function settingDates(startDate, endDate) {
@@ -92,7 +100,7 @@ function Report({
       <div id="report" className={showReport ? "open" : ""}>
          <div className="layout">
             <div className="header">
-               <h1>Summary</h1>
+               <h1>Logs</h1>
 
                <div
                   onClick={changeDateDisplay}
@@ -159,7 +167,7 @@ function Report({
                               : thisDateEntry.content}
                         </p>
                      </div>
-                     <div style={{ border: "1rem solid green" }}>
+                     <div>
                         <div
                            className={
                               thisDateEntry === ""
@@ -187,19 +195,33 @@ function Report({
             </div>
             <div className="habit-tracker">
                <h4>Habit Tracker</h4>
-               <div className="habit-bar">
-                  <div className="habit-trend scrollbar">
-                     <div className="habit-date-bar">
-                        <Tracker
-                           key="dates"
-                           habit={{ habit: "", dates: trackerDates }}
-                           dates={trackerDates}
-                           name="display"
-                        />
-                     </div>
-
+               <div className="habit-bar scrollbar">
+                  <div className="habit-names">
                      {habits.map((habit, index) => {
-                        console.log(trackerDates);
+                        return (
+                           <Tracker
+                              key={index}
+                              habit={habit}
+                              dates={[]}
+                              name="habit-title"
+                           />
+                        );
+                     })}
+                  </div>
+                  <div className="habit-trend scrollbar">
+                     {/* <div className="habit-date-bar"> */}
+                     <Tracker
+                        key="dates"
+                        habit={{
+                           habit: "",
+                           dates: trackerDates,
+                           completed: [],
+                        }}
+                        dates={trackerDates}
+                        name="display"
+                     />
+                     {/* </div> */}
+                     {habits.map((habit, index) => {
                         return (
                            <Tracker
                               key={index}

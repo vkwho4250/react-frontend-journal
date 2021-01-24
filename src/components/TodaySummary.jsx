@@ -53,7 +53,6 @@ function TodaySummary({
    }
 
    function displayHabit(event) {
-      console.log(event.target);
       if (event.type === "mouseenter") {
          setHabitInFocus(event.currentTarget.getAttribute("habit"));
       } else {

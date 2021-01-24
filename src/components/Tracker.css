@@ -1,20 +1,7 @@
 .tracker-container {
-   /* width: 100%; */
-   /* min-height: 25rem; */
-   /* background: red; */
+   min-height: 25rem;
    display: flex;
-   border-bottom: 1rem dashed red;
-}
-
-.habit-name {
-   width: 250rem;
-   overflow-x: scroll;
-   overflow-y: hidden;
-   border-right: 1rem dashed red;
-}
-
-.habit-name::-webkit-scrollbar {
-   display: none;
+   border-bottom: 1rem dashed rgb(166, 177, 225);
 }
 
 .tracker-dot-container {
@@ -24,7 +11,7 @@
 .tracker-dot-box {
    width: 25rem;
    height: 25rem;
-   border-right: 1rem dashed red;
+   border-right: 1rem dashed rgb(166, 177, 225);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -33,6 +20,8 @@
 .tracker-dates-box {
    position: relative;
    width: 25rem;
+   height: 80rem;
+   border-right: 1rem dashed rgb(166, 177, 225);
    /* height: 100rem; */
 }
 
@@ -47,4 +36,10 @@
    transform: rotate(-180deg);
    /* text-orientation: upright; */
    /* font-size: 16rem; */
+}
+
+.tracker-habit-title {
+   height: 25rem;
+   width: 250rem;
+   border-right: 1rem dashed rgb(166, 177, 225);
 }

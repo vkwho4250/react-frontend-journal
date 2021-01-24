@@ -6,6 +6,7 @@ function Habit({ todayString, habit, displayHabit, editHabit, action }) {
 
    function changeIsComplete() {
       console.log("entering changeISComplet");
+      console.log(habit);
       if (action === "CheckOff") {
          setIsComplete(!isComplete);
       }

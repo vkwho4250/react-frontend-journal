@@ -9,11 +9,11 @@ function Header({ showReport, setShowReport }) {
    return (
       <div id="header">
          <div className="header-actions">
-            <button>
+            {/* <button>
                <h5>Tracker</h5>
-            </button>
+            </button> */}
             <button onClick={changeReportDisplay}>
-               <h5>Date Summary</h5>
+               <h5>Logs</h5>
             </button>
             <button>
                <h5>How to Use</h5>
