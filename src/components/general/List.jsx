@@ -1,5 +1,6 @@
 import React from "react";
 import "./List.css";
+
 import Item from "./Item";
 
 function List({ listTitle, items, removeItem, editItem, showReport = false }) {
@@ -11,7 +12,6 @@ function List({ listTitle, items, removeItem, editItem, showReport = false }) {
          <div className="items-display">
             <ul>
                {items.map((item, index) => {
-                  console.log(item.completed);
                   return (
                      <Item
                         key={index}

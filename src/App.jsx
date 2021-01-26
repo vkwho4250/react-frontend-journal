@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Dashboard from "./Dashboard";
-import Avatar from "./Avatar";
-import Header from "./Header";
-import Report from "./Report";
+import Dashboard from "./components/Dashboard";
+import Avatar from "./components/avatar/Avatar";
+import Header from "./components/Header";
+import Report from "./components/log/Report";
 
 function App() {
    const today = new Date(new Date().setHours(0, 0, 0, 0));
@@ -50,15 +50,37 @@ function App() {
          id: 0,
          habit: "Drink 8 cups of water a day",
          abbr: "W",
-         dates: ["2021-01-10", "2021-01-11", "2021-01-12"],
-         completed: [true, false, true],
+         dates: [
+            "2021-01-01",
+            "2021-01-02",
+            "2021-01-03",
+            "2021-01-04",
+            "2021-01-05",
+            "2021-01-06",
+            "2021-01-07",
+            "2021-01-08",
+            "2021-01-09",
+            "2021-01-10",
+         ],
+         completed: [
+            true,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+         ],
       },
       {
          id: 1,
          habit: "Take vitamins",
          abbr: "V",
-         dates: ["2021-01-18", "2021-01-19"],
-         completed: [true, false],
+         dates: ["2021-01-16", "2021-01-17", "2021-01-18", "2021-01-19"],
+         completed: [true, true, false, true],
       },
    ]);
 
@@ -67,7 +89,7 @@ function App() {
          id: 0,
          type: "todo",
          category: "Shopping",
-         content: "THis is a longer test but not overly long",
+         content: "This is a longer test but not overly long",
          date: "2021-01-15",
          completed: false,
       },
@@ -75,8 +97,8 @@ function App() {
          id: 1,
          type: "general",
          category: "Banking",
-         content: "this is a derp.",
-         date: "2021-01-15",
+         content: "this is a test.",
+         date: "2021-01-11",
          completed: false,
       },
       {
@@ -85,7 +107,7 @@ function App() {
          type: "todo",
          content:
             "This is a long test for T2.This is a long test for T2.This is a long test for T2.This is a long test for T2. ",
-         date: "2021-01-15",
+         date: "2021-01-11",
          completed: false,
       },
       {
@@ -93,15 +115,15 @@ function App() {
          type: "todo",
          category: "Family",
          content: "This is a long test for T4",
-         date: "2021-01-15",
+         date: "2021-01-10",
          completed: false,
       },
       {
          id: 4,
          type: "event",
          category: "Birthdays",
-         content: "This is Jam's Bday",
-         date: "2021-01-15",
+         content: "This is someone's Bday",
+         date: "2021-01-11",
          completed: false,
       },
       {
@@ -128,9 +150,9 @@ function App() {
             },
          ];
       });
-   }, []);
+   }, [todayString]);
 
-   // > ========  Collections =================
+   // > ========  Collections ================
 
    const [itemsOverflow, setItemsOverflow] = useState(false);
    const [createDisplay, setCreateDisplay] = useState(false);
@@ -153,8 +175,6 @@ function App() {
    });
 
    function filterItems(array, propertyName, propertyValue) {
-      console.log("filterItems");
-
       return array.filter((item) => {
          return item[propertyName] === propertyValue;
       });
@@ -176,15 +196,6 @@ function App() {
             };
             return [...temp];
          });
-
-         // setNewItem((prevValue) => ({
-         //    id: prevValue + 1,
-         //    todo: "general",
-         //    category: "",
-         //    content: "",
-         //    date: todayString,
-         //    completed: false,
-         // }));
       } else {
          setCreateDisplay(true);
          setNewItem({
@@ -266,7 +277,6 @@ function App() {
    }
 
    function listGrouping(property) {
-      console.log(property);
       let temp = allItems.map((item) => item[property]);
       temp.sort();
 
@@ -319,13 +329,15 @@ function App() {
          />
          <Avatar avatar={avatar} setAvatar={setAvatar} />
          <Report
+            //Variables
             today={today}
             todayString={todayString}
             avatar={avatar}
             allItems={allItems}
             entries={entries}
-            filterItems={filterItems}
             habits={habits}
+            //Functions
+            filterItems={filterItems}
             showReport={showReport}
          />
          <Dashboard
@@ -334,11 +346,7 @@ function App() {
             todayString={todayString}
             frontPanel={frontPanel}
             allMoods={allMoods}
-            // chosenMood={chosenMood}
-            // setChosenMood={setChosenMood}
-            // allAnimals={allAnimals}
             avatar={avatar}
-            // setAvatar={setAvatar}
             entries={entries}
             setEntries={setEntries}
             habits={habits}

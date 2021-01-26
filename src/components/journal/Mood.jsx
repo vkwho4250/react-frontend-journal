@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Mood.css";
 
-import { ReactComponent as MoodSelector } from "./images/expressions.svg";
+import { ReactComponent as MoodSelector } from "../images/expressions.svg";
 
 function Mood({
+   //Variable
    mood,
    avatar,
-   changeMoodFocus,
-   chosenMood,
-   updateEntry,
    action,
+   chosenMood,
+   //Functions
+   changeMoodFocus,
+   updateEntry,
    revealChoices,
 }) {
    return (

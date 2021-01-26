@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Collections.css";
-import List from "./List";
-import Dropdown from "./Dropdown";
+
+import List from "../general/List";
+import Dropdown from "../general/Dropdown";
 
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
@@ -10,7 +11,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 function Collections({
-   // Variables
+   // States
    todayString,
    frontPanel,
    allItems,
@@ -33,39 +34,18 @@ function Collections({
    changeCreateDisplay,
    changeGroupingDisplay,
 }) {
-   console.log(todayString);
    const [moveUp, setMoveUp] = useState(false);
    const [headerDisplay, setHeaderDisplay] = useState("");
    const [suggestionDisplay, setSuggestionDisplay] = useState(false);
 
    const [categories, setCategories] = useState([]);
-   // const [listGroups, setListGroups] = useState({
-   //    propertyName: "",
-   //    propertyValues: [],
-   // });
-
-   // function listGrouping(property) {
-   //    let temp = allItems.map((item) => item[property]);
-   //    temp.sort();
-
-   //    setListGroups({
-   //       propertyName: property,
-   //       propertyValues: [...new Set(temp)],
-   //    });
-   // }
-   // const [groupingDisplay, setGroupingDisplay] = useState(false);
-
-   // function changeGroupingDisplay(event) {
-   //    console.log(event.currentTarget);
-   //    setGroupingDisplay(!groupingDisplay);
-   // }
 
    useEffect(() => {
       const categoryList = [
          ...new Set(allItems.map((item) => item["category"])),
       ];
-      setCategories(categoryList.sort()); //getting categories for suggesting menu
-      listGrouping(listGroups.propertyName); //Default Grouping
+      setCategories(categoryList.sort());
+      listGrouping(listGroups.propertyName);
    }, [allItems]);
 
    function updateItem(event) {
@@ -85,7 +65,6 @@ function Collections({
       event.stopPropagation();
    }
 
-   //* ===== DISPLAY CHANGES ====================================================
    function moveDisplayUp(event) {
       if (event.type === "mouseenter") {
          setMoveUp(true);

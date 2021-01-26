@@ -22,7 +22,6 @@
    width: 25rem;
    height: 80rem;
    border-right: 1rem dashed rgb(166, 177, 225);
-   /* height: 100rem; */
 }
 
 .indicator.filled {
@@ -31,11 +30,8 @@
 
 .tracker-date-display {
    width: 25rem;
-   /* height: 80rem; */
    writing-mode: vertical-rl;
    transform: rotate(-180deg);
-   /* text-orientation: upright; */
-   /* font-size: 16rem; */
 }
 
 .tracker-habit-title {

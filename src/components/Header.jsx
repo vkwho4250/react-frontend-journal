@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Header.css";
 
+import Dropdown from "./general/Dropdown";
+
 import MenuIcon from "@material-ui/icons/Menu";
-import Dropdown from "./Dropdown";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 function Header({ showReport, setShowReport, setFrontPanel }) {
@@ -75,17 +76,3 @@ function Header({ showReport, setShowReport, setFrontPanel }) {
 }
 
 export default Header;
-
-{
-   /* <div id="display-panels">
-               <button>
-                  <p>Summary</p>
-               </button>
-               <button>
-                  <p>Collections</p>
-               </button>
-               <button>
-                  <p>Journal</p>
-               </button>
-            </div> */
-}

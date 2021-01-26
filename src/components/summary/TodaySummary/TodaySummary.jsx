@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./TodaySummary.css";
+
+import List from "../../general/List";
+import Habit from "./Habit";
+
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-
-import List from "./List";
-import Item from "./Item";
-import Habit from "./Habit";
 
 function TodaySummary({
    // Variables
@@ -45,10 +45,6 @@ function TodaySummary({
 
    function changeDisplayWarning(event) {
       setDisplayWarning(!displayWarning);
-      // if (action === "Edit") {
-      //    setDisplayWarning(!displayWarning);
-      // }
-
       event.preventDefault();
    }
 
@@ -90,8 +86,8 @@ function TodaySummary({
                completed: habits[habitID].completed,
             });
          }
-      } catch (e) {
-         console.log(e);
+      } catch (error) {
+         console.log(error);
       }
    }
 

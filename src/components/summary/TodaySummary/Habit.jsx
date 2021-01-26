@@ -12,10 +12,6 @@ function Habit({ todayString, habit, displayHabit, editHabit, action }) {
       }
    }
 
-   //    function callEdit() {
-   //       editHabit(habit.id);
-   //    }
-
    let todayPosition = habit.dates.findIndex((date) => date === todayString);
 
    return (
@@ -42,11 +38,6 @@ function Habit({ todayString, habit, displayHabit, editHabit, action }) {
                {habit.abbr}
             </p>
          </div>
-
-         {/* <div className="icon-container">
-            <EditIcon className="btn-icon" />
-            <ClearIcon className="btn-icon" />
-         </div> */}
       </div>
    );
 }

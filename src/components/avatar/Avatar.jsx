@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Avatar.css";
 
-import { ReactComponent as MoodSelector } from "./images/expressions.svg";
 import Animal from "./Animal";
+
+import { ReactComponent as MoodSelector } from "../images/expressions.svg";
 
 function Avatar({ avatar, setAvatar }) {
    const allAnimals = [

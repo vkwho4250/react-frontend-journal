@@ -44,7 +44,6 @@
 #mood-container {
    position: relative;
    height: 20vh;
-   /* border-top: 1rem dashed rgb(166, 177, 225); */
 }
 
 .mood-title {
@@ -53,7 +52,7 @@
    left: 0;
    width: 110%;
    background: white;
-   height: 50%;
+   height: 52%;
    display: flex;
    align-items: center;
    transition: all 1s ease-in-out;
@@ -75,34 +74,28 @@
 }
 
 .mood-tracker {
-   /* border: 1rem solid blue; */
    overflow-x: scroll;
    overflow-y: hidden;
    width: 100%;
 }
 
 * {
-   /* position: absolute; */
    scrollbar-color: rgb(166, 177, 225) rgb(244, 238, 255);
    scrollbar-width: thin;
 }
 
-/* width */
 .scrollbar::-webkit-scrollbar {
    height: 1vh;
 }
 
-/* Track */
 .scrollbar::-webkit-scrollbar-track {
    background: rgb(244, 238, 255);
 }
 
-/* Handle */
 .scrollbar::-webkit-scrollbar-thumb {
    background: rgb(166, 177, 225);
 }
 
-/* Handle on hover */
 .scrollbar::-webkit-scrollbar-thumb:hover {
    background: rgb(66, 72, 116);
 }
@@ -118,24 +111,10 @@
    position: relative;
    height: 100%;
    margin-top: 5rem;
-   /* background: rgb(166, 177, 225); */
-   /* border-radius: 5rem; */
    display: flex;
    align-items: center;
    padding: 5rem;
 }
-
-/* .mood-description::before {
-   display: inline-block;
-   content: "";
-   position: absolute;
-   top: -13rem;
-   left: 5rem;
-   background: rgb(166, 177, 225);
-   width: 15rem;
-   height: 15rem;
-   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-} */
 
 #mood-container p {
    position: relative;
@@ -157,7 +136,8 @@
 @media only screen and (max-width: 1024px) {
    .mood-title {
       z-index: 100;
-      width: 500rem;
+      top: 5%;
+      width: 100%;
    }
 
    .mood-title.reveal {
@@ -171,6 +151,6 @@
    }
 
    .mood-title {
-      top: 3%;
+      top: 0;
    }
 }

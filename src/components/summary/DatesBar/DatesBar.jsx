@@ -26,7 +26,6 @@ function DatesBar({ today, allItems, filterItems }) {
    }, [allItems]);
 
    return (
-      // <div>
       <div id="dates-bar">
          {dateArray.map((date, index) => {
             return (
@@ -39,7 +38,6 @@ function DatesBar({ today, allItems, filterItems }) {
             );
          })}
       </div>
-      // </div>
    );
 }
 

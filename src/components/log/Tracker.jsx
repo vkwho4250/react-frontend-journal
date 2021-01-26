@@ -1,5 +1,6 @@
 import React from "react";
 import "./Tracker.css";
+
 import TrackerDots from "./TrackerDots";
 
 function Tracker({ habit, dates, name }) {

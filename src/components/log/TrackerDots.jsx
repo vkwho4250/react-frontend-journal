@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function TrackerDots({ date, habit, name }) {
    function typeOfBox() {

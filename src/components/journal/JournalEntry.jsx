@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./JournalEntry.css";
 
 import Mood from "./Mood";
+
 import SaveIcon from "@material-ui/icons/Save";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 function JournalEntry({
-   // entryId,
    todayFormatted,
-   todayString,
    todayEntry,
    setEntries,
    allMoods,
-   // chosenMood,
-   allAnimals,
    avatar,
 }) {
    const [showMoodChoices, setShowMoodChoices] = useState(false);
@@ -132,25 +128,25 @@ function JournalEntry({
                      }
                   >
                      <Mood
+                        //Variables
                         key="currentMood"
                         mood={currentEntry.mood}
                         avatar={avatar}
-                        changeMoodFocus={changeMoodFocus}
-                        chosenMood={currentEntry.mood}
-                        updateEntry={updateEntry}
                         action="reveal choices"
+                        chosenMood={currentEntry.mood}
+                        // Functions
+                        changeMoodFocus={changeMoodFocus}
+                        updateEntry={updateEntry}
                         revealChoices={revealChoices}
                      />
                      <div className="mood-text">
                         <h3>Mood Tracker</h3>
                         <div>
-                           {/* <ArrowBackIcon className="btn-icon" /> */}
                            <p>Pick a mood</p>
                         </div>
                      </div>
                   </div>
                </div>
-               {/* <div className="mood-description"> */}
                <textarea
                   className="input-entry entry-reason"
                   onChange={updateEntry}
@@ -159,7 +155,6 @@ function JournalEntry({
                   placeholder="Why do you feel this way?"
                   action="text update"
                ></textarea>
-               {/* </div> */}
             </div>
          </form>
       </div>

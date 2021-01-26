@@ -16,7 +16,7 @@ html {
    font-size: 6.25%;
 }
 body {
-   background: var(--night-dark-purple);
+   background: rgb(32, 34, 54);
    font: 16rem Quicksand, sans-serif;
    font-weight: 400;
    overflow: hidden;

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Item.css";
 
-import CheckIcon from "@material-ui/icons/Check";
 import ClearIcon from "@material-ui/icons/Clear";
 import EditIcon from "@material-ui/icons/Edit";
 import EventOutlinedIcon from "@material-ui/icons/EventOutlined";

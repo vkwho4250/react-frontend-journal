@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
-import { ReactComponent as NightSky } from "./images/night-sky.svg";
 
-import Collections from "./Collections";
-import DatesBar from "./DatesBar";
-import TodaySummary from "./TodaySummary";
-import JournalEntry from "./JournalEntry";
+import Collections from "./collections/Collections";
+import DatesBar from "./summary/DatesBar/DatesBar";
+import TodaySummary from "./summary/TodaySummary/TodaySummary";
+import JournalEntry from "./journal/JournalEntry";
+
+import { ReactComponent as NightSky } from "./images/night-sky.svg";
 
 function Dashboard({
    // Variables
@@ -62,8 +63,6 @@ function Dashboard({
    function updateQuickNotes(event) {
       const { value } = event.target;
       setQuickNotes(value);
-
-      // event.stopPropagation();
    }
 
    return (
@@ -92,7 +91,6 @@ function Dashboard({
                editItem={editItem}
             />
          </div>
-
          <div className="ribbon">
             <div className="ribbon-tip"></div>
          </div>

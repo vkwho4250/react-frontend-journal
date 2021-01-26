@@ -1,7 +1,6 @@
 #dates-bar {
    position: relative;
    z-index: 50;
-   /* left: 35%; */
    width: 90rem;
    height: 100%;
    padding: 5rem;

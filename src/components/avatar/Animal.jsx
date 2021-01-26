@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ReactComponent as MoodSelector } from "./images/expressions.svg";
+import { ReactComponent as MoodSelector } from "../images/expressions.svg";
 
 function Animal({ animal, changeAvatar }) {
    return (

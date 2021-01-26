@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./Report.css";
-import Dropdown from "./Dropdown";
-import List from "./List";
-import Mood from "./Mood";
-import { ReactComponent as MoodSelector } from "./images/expressions.svg";
 
-import ExpandLessIcon from "@material-ui/icons/ExpandLess";
-import JournalEntry from "./JournalEntry";
+import Dropdown from "../general/Dropdown";
+import List from "../general/List";
 import Tracker from "./Tracker";
 
+import { ReactComponent as MoodSelector } from "../images/expressions.svg";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+
 function Report({
+   //Variables
    today,
    todayString,
    avatar,
    allItems,
    entries,
-   filterItems,
    habits,
+   //Functions
+   filterItems,
    showReport,
 }) {
    const [allDates, setAllDates] = useState([]);
@@ -33,7 +34,7 @@ function Report({
       const itemDates = allItems.map((item) => item.date);
 
       const combinedDates = [...new Set([...entryDates, ...itemDates].sort())];
-      setAllDates(combinedDates.filter((date) => date != todayString));
+      setAllDates(combinedDates.filter((date) => date !== todayString));
 
       const reducer = (accumulator, currentValue) =>
          accumulator < currentValue ? accumulator : currentValue;
@@ -45,10 +46,10 @@ function Report({
       setTrackerDates(
          settingDates(new Date(firstHabitDate).setHours(24, 0, 0, 0), today)
       );
-   }, [allItems, entries, habits]);
+   }, [allItems, entries, habits, today, todayString]);
 
    function settingDates(startDate, endDate) {
-      const allDates = new Array();
+      const allDates = [];
       const date = new Date(startDate);
       while (date <= endDate) {
          allDates.push(new Date(date).toISOString().substring(0, 10));

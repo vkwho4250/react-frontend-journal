@@ -5,11 +5,6 @@
    left: 0;
 }
 
-/* #avatar-container .avatar-animal {
-   width: 20rem;
-   height: 20rem;
-} */
-
 #avatar-options {
    position: relative;
    display: flex;
@@ -46,14 +41,10 @@
    }
    #avatar-options {
       position: absolute;
-      /* flex-direction: row; */
       border-top: none;
       border-bottom: none;
       background: var(--night-dark-purple);
-      /* top: -3rem;
-      left: -1000%; */
       padding: 45rem 5rem 10rem 0;
       border-radius: 0 0 10rem 10rem;
-      /* border: 1rem solid red; */
    }
 }
