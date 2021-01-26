@@ -197,3 +197,18 @@ svg.expand.show {
 #collections .indicator {
    display: none;
 }
+
+@media only screen and (max-width: 1024px) {
+   #collections {
+      width: 100%;
+      z-index: 100;
+      background: linear-gradient(white 30%, rgba(244, 238, 255, 1));
+      border-radius: 50rem;
+      top: 100vh;
+      transition: all 1s ease-in-out;
+   }
+
+   #collections.show {
+      top: 0vh;
+   }
+}

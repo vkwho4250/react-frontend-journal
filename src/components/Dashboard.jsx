@@ -11,6 +11,7 @@ function Dashboard({
    // Variables
    today,
    todayString,
+   frontPanel,
    allMoods,
    chosenMood,
    setChosenMood,
@@ -48,9 +49,9 @@ function Dashboard({
       day: "numeric",
    };
 
-   const currentWeekday = Intl.DateTimeFormat("en-US", {
+   const currentWeekday = new Intl.DateTimeFormat("en-US", {
       weekday: "long",
-   }).format(today.getDay());
+   }).format(today);
 
    const todayFormatted = new Intl.DateTimeFormat("en-US", options).format(
       today
@@ -102,8 +103,9 @@ function Dashboard({
          />
 
          <Collections
-            today={today}
+            todayString={todayString}
             // States
+            frontPanel={frontPanel}
             allItems={allItems}
             newItem={newItem}
             setNewItem={setNewItem}
@@ -126,7 +128,10 @@ function Dashboard({
             changeGroupingDisplay={changeGroupingDisplay}
          />
 
-         <div id="journal-container">
+         <div
+            id="journal-container"
+            className={frontPanel === "journal" ? "show" : ""}
+         >
             <div className="header">
                <h3>Journal</h3>
             </div>
@@ -152,7 +157,7 @@ function Dashboard({
                      name="quick-notes"
                      onChange={updateQuickNotes}
                      value={quickNotes}
-                     rows="7"
+                     rows="4"
                      columns="50"
                      placeholder="Notes notes notes..."
                   >

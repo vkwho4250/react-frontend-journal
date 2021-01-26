@@ -34,7 +34,7 @@
 
 .ribbon {
    position: relative;
-   z-index: 110;
+   z-index: 50;
    top: -3rem;
    width: 2vw;
    height: 90vh;
@@ -57,7 +57,7 @@
 
 .summary-container {
    position: relative;
-   z-index: 99;
+   z-index: 50;
    width: 30%;
    height: 100%;
    background: white;
@@ -243,28 +243,77 @@
    z-index: 99;
    padding: 10rem 20rem 10rem 40rem;
    width: 95%;
+   height: 90%;
    margin-top: 2rem;
    /* background: blue; */
    font-weight: 500;
 }
 
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1024px) { */
+.circle-container {
+   height: 10vw;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0;
+}
+
+.circle-img {
+   position: relative;
+   width: 10vw;
+   height: 10vw;
+}
+
+.date-display {
+   position: relative;
+   width: 50%;
+   /* background: blue; */
+}
+/* } */
+
+@media only screen and (max-width: 1024px) {
+   .layout {
+      display: inline-block;
+      top: 8vh;
+      left: 50%;
+      transform: translate(-50%, 0);
+   }
+
+   #journal-container {
+      position: absolute;
+      z-index: 100;
+      top: 100vh;
+      transition: all 1s ease-in-out;
+   }
+
+   #journal-container.show {
+      top: 0vh;
+   }
+
+   .summary-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 76%;
+   }
+
+   .ribbon {
+      display: none;
+   }
+
    .circle-container {
-      height: 170rem;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0;
+      height: 22vw;
+      padding: 0 5vw;
    }
 
    .circle-img {
-      position: relative;
-      width: 10vw;
-      height: 10vw;
+      width: 20vw;
+      height: 20vw;
    }
 
-   .date-display {
-      position: relative;
-      width: 50%;
-      /* background: blue; */
+   #journal-container {
+      /* z-index: 70; */
+      width: 100%;
+      background: white;
+      border-radius: 50rem;
    }
 }

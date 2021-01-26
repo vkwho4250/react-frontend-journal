@@ -12,6 +12,7 @@ import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 function Collections({
    // Variables
    todayString,
+   frontPanel,
    allItems,
    newItem,
    setNewItem,
@@ -32,6 +33,7 @@ function Collections({
    changeCreateDisplay,
    changeGroupingDisplay,
 }) {
+   console.log(todayString);
    const [moveUp, setMoveUp] = useState(false);
    const [headerDisplay, setHeaderDisplay] = useState("");
    const [suggestionDisplay, setSuggestionDisplay] = useState(false);
@@ -63,7 +65,7 @@ function Collections({
          ...new Set(allItems.map((item) => item["category"])),
       ];
       setCategories(categoryList.sort()); //getting categories for suggesting menu
-      listGrouping("category"); //Default Grouping
+      listGrouping(listGroups.propertyName); //Default Grouping
    }, [allItems]);
 
    function updateItem(event) {
@@ -102,7 +104,10 @@ function Collections({
    }
 
    return (
-      <div id="collections">
+      <div
+         id="collections"
+         className={frontPanel === "collections" ? "show" : ""}
+      >
          <div className="header">
             <div className={moveUp ? "move-up header-text" : "header-text"}>
                <h3>Collections</h3>

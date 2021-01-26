@@ -1,6 +1,6 @@
 #dates-bar {
    position: relative;
-   z-index: 98;
+   z-index: 50;
    /* left: 35%; */
    width: 90rem;
    height: 100%;
@@ -9,4 +9,17 @@
    box-shadow: 5rem 0 20rem 5rem rgba(66, 72, 116, 0.4);
    display: grid;
    grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
+}
+
+@media only screen and (max-width: 1024px) {
+   #dates-bar {
+      position: absolute;
+      right: 0;
+      width: 25%;
+      padding-right: 5%;
+      border-radius: 0 50rem 50rem 0;
+      border-left: 1rem dashed rgb(166, 177, 225);
+      box-shadow: none;
+      background: white;
+   }
 }

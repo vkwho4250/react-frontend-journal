@@ -11,6 +11,7 @@ import Tracker from "./Tracker";
 
 function Report({
    today,
+   todayString,
    avatar,
    allItems,
    entries,
@@ -32,7 +33,7 @@ function Report({
       const itemDates = allItems.map((item) => item.date);
 
       const combinedDates = [...new Set([...entryDates, ...itemDates].sort())];
-      setAllDates(combinedDates);
+      setAllDates(combinedDates.filter((date) => date != todayString));
 
       const reducer = (accumulator, currentValue) =>
          accumulator < currentValue ? accumulator : currentValue;
@@ -132,105 +133,107 @@ function Report({
                   })}
                </ul>
             </div>
-            <div className="summary-body">
-               <div className="summary-items">
-                  <div>
-                     <List
-                        listTitle="Events"
-                        items={thisDateEvents}
-                        removeItem=""
-                        editItem=""
-                     />
-                  </div>
-                  <div>
-                     <List
-                        listTitle="To Dos"
-                        items={thisDateTodos}
-                        removeItem=""
-                        editItem=""
-                     />
-                  </div>
-               </div>
-               <div className="summary-journal">
-                  <div className="summary-entry list">
-                     <div className="summary-entry-header">
-                        <h3>
-                           {thisDateEntry === ""
-                              ? "Journal"
-                              : thisDateEntry.title}
-                        </h3>
-                     </div>
-                     <div className="entry-content">
-                        <p>
-                           {thisDateEntry === ""
-                              ? "No entry on this date."
-                              : thisDateEntry.content}
-                        </p>
+            <div className="log-body">
+               <div className="summary-body">
+                  <div className="summary-items">
+                     <div>
+                        <List
+                           listTitle="Events"
+                           items={thisDateEvents}
+                           removeItem=""
+                           editItem=""
+                           showReport={showReport}
+                        />
                      </div>
                      <div>
-                        <div
-                           className={
-                              thisDateEntry === ""
-                                 ? " no-display"
-                                 : "summary-mood"
-                           }
-                        >
-                           <div
-                              className={`mood-box ${thisDateEntry.mood} ${avatar} `}
-                           >
-                              <MoodSelector
-                                 className="svg-expression"
-                                 value={thisDateEntry.mood}
-                                 avatar={avatar}
-                              />
-                           </div>
-                           <h3>Mood Tracker</h3>
+                        <List
+                           listTitle="To Dos"
+                           items={thisDateTodos}
+                           removeItem=""
+                           editItem=""
+                           showReport={showReport}
+                        />
+                     </div>
+                  </div>
+                  <div className="summary-journal">
+                     <div className="summary-entry list">
+                        <div className="summary-entry-header">
+                           <h3>
+                              {thisDateEntry === ""
+                                 ? "Journal"
+                                 : thisDateEntry.title}
+                           </h3>
                         </div>
-                        <div className="summary-reason">
-                           <p>{thisDateEntry.reason}</p>
+                        <div className="entry-content">
+                           <p>
+                              {thisDateEntry === ""
+                                 ? "No entry on this date."
+                                 : thisDateEntry.content}
+                           </p>
+                        </div>
+                        <div>
+                           <div
+                              className={
+                                 thisDateEntry === ""
+                                    ? " no-display"
+                                    : "summary-mood"
+                              }
+                           >
+                              <div
+                                 className={`mood-box ${thisDateEntry.mood} ${avatar} `}
+                              >
+                                 <MoodSelector
+                                    className="svg-expression"
+                                    value={thisDateEntry.mood}
+                                    avatar={avatar}
+                                 />
+                              </div>
+                              <h3>Mood Tracker</h3>
+                           </div>
+                           <div className="summary-reason">
+                              <p>{thisDateEntry.reason}</p>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
-            <div className="habit-tracker">
-               <h4>Habit Tracker</h4>
-               <div className="habit-bar scrollbar">
-                  <div className="habit-names">
-                     {habits.map((habit, index) => {
-                        return (
-                           <Tracker
-                              key={index}
-                              habit={habit}
-                              dates={[]}
-                              name="habit-title"
-                           />
-                        );
-                     })}
-                  </div>
-                  <div className="habit-trend scrollbar">
-                     {/* <div className="habit-date-bar"> */}
-                     <Tracker
-                        key="dates"
-                        habit={{
-                           habit: "",
-                           dates: trackerDates,
-                           completed: [],
-                        }}
-                        dates={trackerDates}
-                        name="display"
-                     />
-                     {/* </div> */}
-                     {habits.map((habit, index) => {
-                        return (
-                           <Tracker
-                              key={index}
-                              habit={habit}
-                              dates={trackerDates}
-                              name="habit"
-                           />
-                        );
-                     })}
+               <div className="habit-tracker">
+                  <h4>Habit Tracker</h4>
+                  <div className="habit-bar scrollbar">
+                     <div className="habit-names">
+                        {habits.map((habit, index) => {
+                           return (
+                              <Tracker
+                                 key={index}
+                                 habit={habit}
+                                 dates={[]}
+                                 name="habit-title"
+                              />
+                           );
+                        })}
+                     </div>
+                     <div className="habit-trend scrollbar">
+                        <Tracker
+                           key="dates"
+                           habit={{
+                              habit: "",
+                              dates: trackerDates,
+                              completed: [],
+                           }}
+                           dates={trackerDates}
+                           name="display"
+                        />
+                        {habits.map((habit, index) => {
+                           return (
+                              <Tracker
+                                 key={index}
+                                 habit={habit}
+                                 dates={trackerDates}
+                                 name="habit"
+                              />
+                           );
+                        })}
+                     </div>
                   </div>
                </div>
             </div>

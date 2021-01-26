@@ -3,6 +3,7 @@ import "./JournalEntry.css";
 
 import Mood from "./Mood";
 import SaveIcon from "@material-ui/icons/Save";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 function JournalEntry({
    // entryId,
@@ -140,7 +141,13 @@ function JournalEntry({
                         action="reveal choices"
                         revealChoices={revealChoices}
                      />
-                     <h3>Mood Tracker</h3>
+                     <div className="mood-text">
+                        <h3>Mood Tracker</h3>
+                        <div>
+                           {/* <ArrowBackIcon className="btn-icon" /> */}
+                           <p>Pick a mood</p>
+                        </div>
+                     </div>
                   </div>
                </div>
                {/* <div className="mood-description"> */}

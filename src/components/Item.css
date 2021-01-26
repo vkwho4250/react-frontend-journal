@@ -60,3 +60,13 @@ svg.selected {
 svg.invisible {
    opacity: 0;
 } */
+
+@media only screen and (max-width: 1024px) {
+   .list-item:hover .item-icon-container {
+      right: 0;
+   }
+
+   .item-icon-container {
+      right: -10%;
+   }
+}

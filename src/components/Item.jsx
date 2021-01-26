@@ -8,11 +8,17 @@ import EventOutlinedIcon from "@material-ui/icons/EventOutlined";
 import AssignmentOutlinedIcon from "@material-ui/icons/AssignmentOutlined";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-function Item({ content, itemID, itemType, listTitle, removeItem, editItem }) {
-   const [isDone, setDoneStatus] = useState(false);
-
+function Item({
+   content,
+   itemID,
+   itemType,
+   itemStatus,
+   removeItem,
+   editItem,
+   showReport,
+}) {
    function changeDoneStatus() {
-      setDoneStatus(!isDone);
+      editItem(itemID, "status");
    }
 
    function deleteItem() {
@@ -20,7 +26,7 @@ function Item({ content, itemID, itemType, listTitle, removeItem, editItem }) {
    }
 
    function updateItem() {
-      editItem(itemID);
+      editItem(itemID, "content");
    }
 
    return (
@@ -44,15 +50,14 @@ function Item({ content, itemID, itemType, listTitle, removeItem, editItem }) {
                   (itemType === "todo" ? " selected" : "")
                }
             />
-            <p onClick={changeDoneStatus} className={isDone ? "item-done" : ""}>
+            <p
+               onClick={showReport ? null : changeDoneStatus}
+               className={itemStatus ? "item-done" : ""}
+            >
                {content}
             </p>
 
             <div className="item-icon-container">
-               {/* <CheckIcon
-                  onClick={changeDoneStatus}
-                  className="btn-icon item-icon check"
-               /> */}
                <EditIcon
                   onClick={updateItem}
                   className="btn-icon item-icon edit"

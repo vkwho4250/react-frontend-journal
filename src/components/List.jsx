@@ -2,7 +2,7 @@ import React from "react";
 import "./List.css";
 import Item from "./Item";
 
-function List({ listTitle, items, removeItem, editItem }) {
+function List({ listTitle, items, removeItem, editItem, showReport = false }) {
    return (
       <div className="list">
          <div>
@@ -11,14 +11,17 @@ function List({ listTitle, items, removeItem, editItem }) {
          <div className="items-display">
             <ul>
                {items.map((item, index) => {
+                  console.log(item.completed);
                   return (
                      <Item
                         key={index}
                         content={item.content}
                         itemID={item.id}
                         itemType={item.type}
+                        itemStatus={item.completed}
                         removeItem={removeItem}
                         editItem={editItem}
+                        showReport={showReport}
                      />
                   );
                })}

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function TrackerDots({ date, habit, name }) {
-   console.log(habit.completed);
    function typeOfBox() {
       if (name === "display") {
          return "tracker-dates-box";
@@ -19,7 +18,7 @@ function TrackerDots({ date, habit, name }) {
                name === "habit-title" ? "" : "no-display"
             }`}
          >
-            {habit.habit}
+            {habit.abbr}
          </p>
          <p
             className={`tracker-date-display ${

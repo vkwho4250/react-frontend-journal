@@ -24,13 +24,13 @@
    overflow: hidden;
    /* display: inline-block; */
    display: grid;
-   grid-template-rows: 10vh 60vh 1fr;
+   grid-template-rows: 80rem 60vh 1fr;
    /* border: 1rem solid red; */
 }
 
 #report .header {
    z-index: 3;
-   height: 10vh;
+   height: 80rem;
    width: 100%;
    display: flex;
    align-items: center;
@@ -73,7 +73,7 @@
 }
 
 .date-dropdown.open {
-   top: 10vh;
+   top: 80rem;
 }
 
 .date-dropdown ul {
@@ -95,6 +95,8 @@
    /* border: 1rem solid green; */
    height: 98%;
    overflow-y: scroll;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
 }
 
 .summary-body > div::-webkit-scrollbar {
@@ -106,6 +108,8 @@
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
    grid-gap: 10rem;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
 }
 
 .summary-items .list {
@@ -125,10 +129,10 @@
    height: 100%;
 } */
 
-#report .list {
+/* #report .list {
    margin: 0;
    width: 95%;
-}
+} */
 
 .summary-journal {
    position: relative;
@@ -145,6 +149,7 @@
 
 .summary-entry.list {
    padding: 0;
+   width: 100%;
 }
 
 .summary-entry-header {
@@ -215,7 +220,7 @@
 .habit-tracker {
    position: relative;
    width: 98%;
-   height: 90%;
+   height: 50%;
    padding: 5rem 10rem 10rem;
    display: flex;
    flex-direction: column;
@@ -233,7 +238,7 @@
 }
 
 .habit-trend {
-   width: calc(100% - 250rem);
+   width: calc(100% - 30rem);
    height: calc(100% + 80rem);
    overflow-y: hidden;
    overflow-x: scroll;
@@ -254,7 +259,7 @@
    position: relative;
    top: 0;
    left: 2%;
-   height: 70%;
+   height: 60%;
    width: 98%;
    /* border: 1rem solid pink; */
    display: flex;
@@ -270,11 +275,107 @@
 
 .habit-names {
    margin-top: 80rem;
-   width: 250rem;
+   width: 30rem;
    border-top: 1rem dashed rgb(166, 177, 225);
-   /* background: red; */
 }
 
 /* .habit-name::-webkit-scrollbar {
    display: none;
 } */
+
+@media only screen and (max-width: 1024px) {
+   #report h1 {
+      font-size: 25rem;
+   }
+
+   #report .layout {
+      top: 7.5vh;
+   }
+
+   #report .header {
+      justify-content: space-between;
+      padding: 10rem 30rem 0;
+   }
+
+   .date-dropdown {
+      width: 100%;
+   }
+
+   /* #report {
+      top: 0;
+   } */
+
+   /* .summary-body {
+      grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
+      width: 100%;
+      grid-gap: 10rem;
+      border: 1rem solid orange;
+      overflow: scroll;
+   } */
+   /* 
+   .habit-trend {
+      width: calc(100% - 250rem);
+      height: calc(100% + 80rem);
+      overflow-y: hidden;
+      overflow-x: scroll;
+   }
+
+   .habit-names {
+      width: 100rem;
+      border-top: 1rem dashed rgb(166, 177, 225);
+   } */
+}
+
+@media only screen and (max-width: 750px) {
+   #report .layout {
+      display: flex;
+      flex-direction: column;
+   }
+
+   #report .header {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+   }
+
+   #report .header h1 {
+      font-size: 20rem;
+   }
+
+   .log-body {
+      width: 100%;
+      height: 100vh;
+      overflow-y: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+   }
+
+   .log-body::-webkit-scrollbar {
+      display: none;
+   }
+
+   .summary-body {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+   }
+
+   .summary-items {
+      order: 2;
+      height: 100%;
+      padding: 5rem 0;
+   }
+
+   .summary-journal {
+      order: 1;
+      height: 100%;
+   }
+
+   .habit-tracker {
+      height: 40%;
+   }
+
+   .date-dropdown.open {
+      top: 70rem;
+   }
+}

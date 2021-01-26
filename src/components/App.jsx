@@ -20,6 +20,7 @@ function App() {
       "distraught",
    ];
 
+   const [frontPanel, setFrontPanel] = useState("summary");
    const [showReport, setShowReport] = useState(false);
    const [avatar, setAvatar] = useState("default");
    const [entries, setEntries] = useState([
@@ -67,14 +68,16 @@ function App() {
          type: "todo",
          category: "Shopping",
          content: "THis is a longer test but not overly long",
-         date: "2021-01-26",
+         date: "2021-01-15",
+         completed: false,
       },
       {
          id: 1,
          type: "general",
          category: "Banking",
          content: "this is a derp.",
-         date: "2021-01-26",
+         date: "2021-01-15",
+         completed: false,
       },
       {
          id: 2,
@@ -82,28 +85,32 @@ function App() {
          type: "todo",
          content:
             "This is a long test for T2.This is a long test for T2.This is a long test for T2.This is a long test for T2. ",
-         date: "2021-01-26",
+         date: "2021-01-15",
+         completed: false,
       },
       {
          id: 3,
          type: "todo",
          category: "Family",
          content: "This is a long test for T4",
-         date: "2021-01-26",
+         date: "2021-01-15",
+         completed: false,
       },
       {
          id: 4,
          type: "event",
          category: "Birthdays",
          content: "This is Jam's Bday",
-         date: "2021-01-26",
+         date: "2021-01-15",
+         completed: false,
       },
       {
          id: 5,
          type: "event",
          category: "Family",
          content: "Picnic",
-         date: "2021-01-26",
+         date: "2021-01-15",
+         completed: false,
       },
    ]);
 
@@ -137,10 +144,11 @@ function App() {
       category: "",
       content: "",
       date: todayString,
+      completed: false,
    });
 
    const [listGroups, setListGroups] = useState({
-      propertyName: "",
+      propertyName: "category",
       propertyValues: [],
    });
 
@@ -152,18 +160,43 @@ function App() {
       });
    }
 
-   function editItem(itemID) {
+   function editItem(itemID, changeStatus) {
       setAction("Submit Edit");
-      setCreateDisplay(true);
-      setItemType(allItems[itemID].type);
 
-      setNewItem({
-         id: itemID,
-         type: allItems[itemID].type,
-         category: allItems[itemID].category,
-         content: allItems[itemID].content,
-         date: allItems[itemID].date,
-      });
+      if (changeStatus === "status") {
+         setAllItems((prevItems) => {
+            let temp = [...prevItems];
+            temp[itemID] = {
+               id: itemID,
+               type: allItems[itemID].type,
+               category: allItems[itemID].category,
+               content: allItems[itemID].content,
+               date: allItems[itemID].date,
+               completed: !allItems[itemID].completed,
+            };
+            return [...temp];
+         });
+
+         // setNewItem((prevValue) => ({
+         //    id: prevValue + 1,
+         //    todo: "general",
+         //    category: "",
+         //    content: "",
+         //    date: todayString,
+         //    completed: false,
+         // }));
+      } else {
+         setCreateDisplay(true);
+         setNewItem({
+            id: itemID,
+            type: allItems[itemID].type,
+            category: allItems[itemID].category,
+            content: allItems[itemID].content,
+            date: allItems[itemID].date,
+            completed: allItems[itemID].completed,
+         });
+         setItemType(allItems[itemID].type);
+      }
    }
 
    function addItem(event) {
@@ -200,6 +233,7 @@ function App() {
             category: "",
             content: "",
             date: todayString,
+            completed: false,
          }));
       }
 
@@ -260,6 +294,7 @@ function App() {
          category: "",
          content: "",
          date: todayString,
+         completed: false,
       });
       setItemType("general");
    }
@@ -277,10 +312,15 @@ function App() {
 
    return (
       <div id="app-container">
-         <Header showReport={showReport} setShowReport={setShowReport} />
+         <Header
+            showReport={showReport}
+            setShowReport={setShowReport}
+            setFrontPanel={setFrontPanel}
+         />
          <Avatar avatar={avatar} setAvatar={setAvatar} />
          <Report
             today={today}
+            todayString={todayString}
             avatar={avatar}
             allItems={allItems}
             entries={entries}
@@ -292,6 +332,7 @@ function App() {
             // Variables
             today={today}
             todayString={todayString}
+            frontPanel={frontPanel}
             allMoods={allMoods}
             // chosenMood={chosenMood}
             // setChosenMood={setChosenMood}

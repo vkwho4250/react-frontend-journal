@@ -49,11 +49,11 @@
 
 .mood-title {
    position: absolute;
-   top: 0;
+   top: 5%;
    left: 0;
    width: 110%;
    background: white;
-   height: 60%;
+   height: 50%;
    display: flex;
    align-items: center;
    transition: all 1s ease-in-out;
@@ -64,9 +64,14 @@
    left: 150%;
 }
 
-.mood-title h3 {
+.mood-text {
    order: 3;
    padding-left: 10rem;
+}
+
+.mood-text div {
+   display: flex;
+   align-items: center;
 }
 
 .mood-tracker {
@@ -74,6 +79,12 @@
    overflow-x: scroll;
    overflow-y: hidden;
    width: 100%;
+}
+
+* {
+   /* position: absolute; */
+   scrollbar-color: rgb(166, 177, 225) rgb(244, 238, 255);
+   scrollbar-width: thin;
 }
 
 /* width */
@@ -98,7 +109,7 @@
 
 .mood-indicators {
    position: relative;
-   /** 10 expressions with min-width 40rem */
+   /** 10 expressions with min-width 45rem */
    width: calc(max(100%, 10 * 45rem));
    display: flex;
 }
@@ -141,4 +152,25 @@
    width: 100%;
    height: 50%;
    border-top: 1rem dashed rgb(166, 177, 225);
+}
+
+@media only screen and (max-width: 1024px) {
+   .mood-title {
+      z-index: 100;
+      width: 500rem;
+   }
+
+   .mood-title.reveal {
+      left: 120%;
+   }
+}
+
+@media only screen and (max-width: 750px) {
+   .entry-content {
+      height: auto;
+   }
+
+   .mood-title {
+      top: 3%;
+   }
 }

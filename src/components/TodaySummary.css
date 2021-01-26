@@ -124,6 +124,8 @@ input.empty-input::placeholder {
    height: 35vh;
    display: grid;
    grid-gap: 5rem;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
 }
 
 .today-lists::-webkit-scrollbar,
@@ -133,6 +135,8 @@ input.empty-input::placeholder {
 
 .today-lists div {
    position: relative;
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
 }
 
 #today-container .indicator {

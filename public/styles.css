@@ -76,6 +76,7 @@ textarea {
    -ms-overflow-style: none; /* IE and Edge */
    scrollbar-width: none; /* Firefox */
    /* font-weight: 500; */
+   resize: none;
 }
 
 textarea::-webkit-scrollbar {
@@ -107,4 +108,14 @@ svg.btn-icon {
    width: 15rem;
    height: 15rem;
    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+   h1 {
+      font-size: calc(max(5vw, 25rem));
+   }
+
+   h2 {
+      font-size: calc(max(4vw, 22rem));
+   }
 }
