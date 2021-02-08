@@ -1,19 +1,16 @@
-# Daily Journal
+# React Bullet Journal
 
-A journaling application using React.
+This application is created to mimic the collections, journaling and habit tracker sections of the Bullet Journal System.
 
-## Purpose
+A guide to the Bullet Journal System: <br>
+https://www.tinyrayofsunshine.com/blog/bullet-journal-guide
 
--  Learn the underlying structure behind **React** by seeing how:
-   -  it uses JavaScript to render/write HTML
-   -  components update when its input updates
-   -  components can be reused on different parts of the site/within other components
+### The purpose of this project is to learn and gain practice with:
 
-## Current Status - In Progress
+-  React framework
+-  Components and states
 
--  User interface is set up
+### Current Status - In Progress
 
-### Next Step
-
--  Instructions on how to use
--  Incorporate a database to store data.
+-  Frontend is set up and functional
+-  Server and database has not been incorporated yet
