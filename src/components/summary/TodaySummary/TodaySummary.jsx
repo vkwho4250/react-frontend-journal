@@ -9,12 +9,12 @@ import EditIcon from "@material-ui/icons/Edit";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 function TodaySummary({
-   // Variables
+   // States
    todayString,
    allItems,
    habits,
    setHabits,
-   // Functions
+   // Actions
    filterItems,
    removeItem,
    editItem,
@@ -61,8 +61,6 @@ function TodaySummary({
    }
 
    function editHabit(event) {
-      console.log(event.target);
-
       try {
          const habitID = event.target.getAttribute("value");
 
@@ -92,9 +90,6 @@ function TodaySummary({
    }
 
    function removeHabit(event) {
-      console.log(event.currentTarget);
-      console.log(newHabit.id);
-
       setHabits((prevValue) => {
          return prevValue.filter((habit) => {
             return habit.id !== newHabit.id;
@@ -108,8 +103,6 @@ function TodaySummary({
    }
 
    function addHabit(event) {
-      console.log(habits);
-
       if (newHabit.habit.trim() === "") {
          document.querySelector(".input-habit").classList.add("empty-input");
       } else if (newHabit.abbr === "") {
@@ -156,7 +149,6 @@ function TodaySummary({
    }
 
    function changeCreateDisplay(event) {
-      console.log(event.target);
       setAction(event.currentTarget.getAttribute("name"));
 
       if (event.target.getAttribute("name") === "close-btn") {

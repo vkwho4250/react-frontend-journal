@@ -57,9 +57,6 @@ function Header({ showReport, setShowReport, setFrontPanel }) {
                <button onClick={changeReportDisplay}>
                   <h5>Logs</h5>
                </button>
-               <button>
-                  <h5>How to Use</h5>
-               </button>
             </div>
             <button onClick={changePanelMenu}>
                <MenuIcon className="btn-icon menu-icon" />

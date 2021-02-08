@@ -5,8 +5,6 @@ function Habit({ todayString, habit, displayHabit, editHabit, action }) {
    const [isComplete, setIsComplete] = useState(false);
 
    function changeIsComplete() {
-      console.log("entering changeISComplet");
-      console.log(habit);
       if (action === "CheckOff") {
          setIsComplete(!isComplete);
       }

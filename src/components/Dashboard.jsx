@@ -9,7 +9,7 @@ import JournalEntry from "./journal/JournalEntry";
 import { ReactComponent as NightSky } from "./images/night-sky.svg";
 
 function Dashboard({
-   // Variables
+   // States & Actions
    today,
    todayString,
    frontPanel,
@@ -33,7 +33,7 @@ function Dashboard({
    createDisplay,
    groupingDisplay,
    action,
-   // Functions
+   // Actions
    filterItems,
    listGrouping,
    updateItem,

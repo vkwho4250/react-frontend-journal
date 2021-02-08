@@ -9,14 +9,14 @@ import { ReactComponent as MoodSelector } from "../images/expressions.svg";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 function Report({
-   //Variables
+   //States
    today,
    todayString,
    avatar,
    allItems,
    entries,
    habits,
-   //Functions
+   //Actions
    filterItems,
    showReport,
 }) {
@@ -59,7 +59,6 @@ function Report({
    }
 
    function changeDateDisplay(event) {
-      console.log(event.currentTarget);
       if (event.currentTarget.getAttribute("name") === "Date Picker") {
          setDateDisplay(!dateDisplay);
       } else {
@@ -78,8 +77,6 @@ function Report({
       const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
          new Date(date).setHours(24, 0, 0, 0)
       );
-
-      console.log(thisDateEntry);
 
       setDateDisplay(false);
       setSelectedDate(formattedDate);

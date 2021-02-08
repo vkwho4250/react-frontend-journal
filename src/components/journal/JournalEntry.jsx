@@ -33,7 +33,6 @@ function JournalEntry({
 
    function submitEntry(event) {
       setEntries((prevValue) => {
-         console.log(prevValue);
          return [...prevValue.slice(0, todayEntry.id), currentEntry];
       });
 
@@ -60,9 +59,6 @@ function JournalEntry({
          });
       } else {
          const { name, value } = event.target;
-
-         console.log(name);
-         console.log(value);
          setCurrentEntry((prevValue) => {
             return {
                ...prevValue,
@@ -128,13 +124,13 @@ function JournalEntry({
                      }
                   >
                      <Mood
-                        //Variables
+                        //States
                         key="currentMood"
                         mood={currentEntry.mood}
                         avatar={avatar}
                         action="reveal choices"
                         chosenMood={currentEntry.mood}
-                        // Functions
+                        // Actions
                         changeMoodFocus={changeMoodFocus}
                         updateEntry={updateEntry}
                         revealChoices={revealChoices}
