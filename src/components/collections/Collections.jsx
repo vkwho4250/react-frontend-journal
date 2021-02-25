@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Collections.css";
 
-import List from "../general/List";
-import Dropdown from "../general/Dropdown";
+import List from "../global/List";
+import Dropdown from "../global/Dropdown";
 
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";

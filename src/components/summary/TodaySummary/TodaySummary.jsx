@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./TodaySummary.css";
 
-import List from "../../general/List";
+import List from "../../global/List";
 import Habit from "./Habit";
 
 import AddIcon from "@material-ui/icons/Add";

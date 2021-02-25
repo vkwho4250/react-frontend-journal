@@ -1,3 +1,7 @@
+const currentDate = new Date();
+const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+const year = String(currentDate.getFullYear());
+
 const testEntries = [
    {
       id: 0,
@@ -25,7 +29,7 @@ const testHabits = [
       habit: "Drink 8 cups of water a day",
       abbr: "W",
       dates: [
-         "2021-01-01",
+         `2021-01-01`,
          "2021-01-02",
          "2021-01-03",
          "2021-01-04",
@@ -63,41 +67,41 @@ const testItems = [
       id: 0,
       type: "todo",
       category: "Shopping",
-      content: "This is a longer test but not overly long",
-      date: "2021-01-15",
+      content: "Buy oranges, apples and bananas",
+      date: `${year}-${month}-15`,
       completed: false,
    },
    {
       id: 1,
       type: "general",
-      category: "Banking",
-      content: "this is a test.",
-      date: "2021-02-11",
+      category: "TO USER",
+      content:
+         "These are a couple of default notes for you to try out functionality. Feel free to CRUD around - from Victoria ",
+      date: `${year}-${month}-11`,
       completed: false,
    },
    {
       id: 2,
       category: "Errands",
       type: "todo",
-      content:
-         "This is a long test for T2.This is a long test for T2.This is a long test for T2.This is a long test for T2. ",
-      date: "2021-02-11",
+      content: "Switch to winter tires",
+      date: `${year}-${month}-11`,
       completed: false,
    },
    {
       id: 3,
       type: "todo",
       category: "Family",
-      content: "This is a long test for T4",
-      date: "2021-02-10",
+      content: "Ensure no one flips",
+      date: `${year}-${month}-10`,
       completed: false,
    },
    {
       id: 4,
       type: "event",
       category: "Birthdays",
-      content: "This is someone's Bday",
-      date: "2021-02-11",
+      content: "Attend someone's Bday",
+      date: `${year}-${month}-21`,
       completed: false,
    },
    {
@@ -105,7 +109,7 @@ const testItems = [
       type: "event",
       category: "Family",
       content: "Picnic",
-      date: "2021-02-15",
+      date: `${year}-${month}-15`,
       completed: false,
    },
 ];

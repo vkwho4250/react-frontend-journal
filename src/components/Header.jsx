@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 
-import Dropdown from "./general/Dropdown";
+import Dropdown from "./global/Dropdown";
 
 import MenuIcon from "@material-ui/icons/Menu";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";

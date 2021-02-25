@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Report.css";
 
-import Dropdown from "../general/Dropdown";
-import List from "../general/List";
+import Dropdown from "../global/Dropdown";
+import List from "../global/List";
 import Tracker from "./Tracker";
 
 import { ReactComponent as MoodSelector } from "../images/expressions.svg";

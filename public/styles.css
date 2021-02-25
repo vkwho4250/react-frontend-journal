@@ -1,5 +1,4 @@
 :root {
-   /* NIGHT THEME */
    --night-light-purple: rgb(244, 238, 255);
    --night-pink-purple: rgb(220, 214, 247);
    --night-blue-purple: rgb(166, 177, 225);
@@ -73,9 +72,8 @@ textarea {
    background: transparent;
    outline: none;
    font: inherit;
-   -ms-overflow-style: none; /* IE and Edge */
-   scrollbar-width: none; /* Firefox */
-   /* font-weight: 500; */
+   -ms-overflow-style: none;
+   scrollbar-width: none;
    resize: none;
 }
 
@@ -85,7 +83,6 @@ textarea::-webkit-scrollbar {
 
 li {
    list-style: none;
-   text-transform: capitalize;
 }
 
 button {

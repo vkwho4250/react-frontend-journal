@@ -8,9 +8,9 @@ https://www.tinyrayofsunshine.com/blog/bullet-journal-guide
 ### The purpose of this project is to learn and gain practice with:
 
 -  React framework
--  Components and states
+-  Components and states (and associated props and lifecycle)
 
-### Current Status - In Progress
+### Current Status: In Progress
 
--  Frontend is set up and functional
--  Server and database has not been incorporated yet
+-  Front-end is set up and functional
+-  Next steps - add back-end and server to project
