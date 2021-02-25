@@ -75,8 +75,8 @@
 .summary-body > div {
    height: 98%;
    overflow-y: scroll;
-   -ms-overflow-style: none; /* IE and Edge */
-   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none;
+   scrollbar-width: none;
 }
 
 .summary-body > div::-webkit-scrollbar {
@@ -88,8 +88,8 @@
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300rem, 1fr));
    grid-gap: 10rem;
-   -ms-overflow-style: none; /* IE and Edge */
-   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none;
+   scrollbar-width: none;
 }
 
 .summary-items .list {
@@ -160,8 +160,8 @@
 .summary-entry p {
    height: 90%;
    overflow-y: scroll;
-   -ms-overflow-style: none; /* IE and Edge */
-   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none;
+   scrollbar-width: none;
 }
 
 .summary-mood {
@@ -254,8 +254,8 @@
       width: 100%;
       height: 100vh;
       overflow-y: scroll;
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
    }
 
    .log-body::-webkit-scrollbar {

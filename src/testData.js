@@ -76,7 +76,7 @@ const testItems = [
       type: "general",
       category: "TO USER",
       content:
-         "These are a couple of default notes for you to try out functionality. Feel free to CRUD around - from Victoria ",
+         "These are a couple of default notes for you to try functionality. Feel free to CRUD around - from Victoria ",
       date: `${year}-${month}-11`,
       completed: false,
    },
