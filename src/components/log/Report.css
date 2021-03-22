@@ -26,7 +26,6 @@
 }
 
 #report .header {
-   border: 1rem solid red;
    width: 90vw;
    z-index: 3;
    height: fit-content;
