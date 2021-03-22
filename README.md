@@ -2,6 +2,8 @@
 
 This application is created to mimic the collections, journaling and habit tracker sections of the Bullet Journal System.
 
+[Live Site](https://react-frontend-journal.netlify.app "React Front-End Journal - vkwho")
+
 A guide to the Bullet Journal System: <br>
 https://www.tinyrayofsunshine.com/blog/bullet-journal-guide
 
